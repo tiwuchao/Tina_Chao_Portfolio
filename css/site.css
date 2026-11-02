@@ -212,7 +212,7 @@ a.entry-art:focus-visible { outline: 3px solid var(--rust); outline-offset: 10px
 .big-sign li span { grid-column: 1; font-weight: 400; font-size: var(--t-s); opacity: .92; }
 .big-sign li em { grid-row: 1 / span 2; grid-column: 2; font-style: normal; font-weight: 800; font-size: var(--t-xs); letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; align-self: center; border: 2px solid rgba(251,244,230,.75); border-radius: 6px; padding: 3px 8px; }
 /* the next entrances: an orange work-zone sign */
-.sign.big-sign.construction { background: linear-gradient(rgba(255, 196, 120, .38), rgba(255, 196, 120, .38)), #f0902c url("../images/fill-orange.jpg") center / 420px;
+.sign.big-sign.construction { background: linear-gradient(rgba(255, 200, 128, .5), rgba(255, 200, 128, .5)), #f0902c url("../images/fill-orange.jpg") center / 420px;
   color: #1c1a18; box-shadow: none; }
 .construction .barricade { display: block; height: 14px; margin: 2px 0 16px; border-radius: 3px;
   background: repeating-linear-gradient(-45deg, #1c1a18 0 13px, transparent 13px 26px); opacity: .9; }
