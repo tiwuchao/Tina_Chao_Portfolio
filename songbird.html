@@ -94,9 +94,9 @@
     </p>
 
     <section class="inshort" aria-label="In short">
-      <div><p class="hand">the problem</p><p>Visitors come to the site for one quick answer: hours, dietary options, or what kind of place it is. Those answers are hard to find, and the Toast ordering page lists items under different names than the cafe's menu.</p></div>
+      <div><p class="hand">the problem</p><p>Visitors come to the site for one quick answer: hours, dietary options, or what kind of place it is. Those answers are hard to find.</p></div>
       <div><p class="hand">what I did</p><p>An on-site visit with 6 intercept interviews (11 adults), a conversation with on-duty staff, and a review analysis. Then 8 homepage sketches, a desktop prototype, 6 mobile wireframes, and a usability test against the live site.</p></div>
-      <div><p class="hand">the result</p><p>On the live site, 2 of 3 participants couldn't find the sandwich they were asked to order. On my prototype, all 3 went straight to Order Online, and 2 of 3 found the item and its add button right away.</p></div>
+      <div><p class="hand">the result</p><p>Testing showed me what to fix: clearer feedback when an item is added, an error for an empty cart, and totals that match on every screen. The comparison with the live site wasn't a fair test, because the sandwich I chose wasn't on Songbird's online menu that day.</p></div>
     </section>
 
     <div class="cs-quote cs-thesis">
@@ -350,7 +350,7 @@
       <caption class="sr-only">What happened on each task, on the live site and on my prototype</caption>
       <thead><tr><th scope="col">Task</th><th scope="col">Live site</th><th scope="col">My prototype</th></tr></thead>
       <tbody>
-        <tr><td data-label="Task">Find and add the sandwich</td><td data-label="Live site">Not orderable under its menu name. P2 gave up; P3 settled for a generic sandwich.</td><td data-label="My prototype">All 3 chose Order Online first. P2 and P3 found the item and + Add right away.</td></tr>
+        <tr><td data-label="Task">Find and add the sandwich</td><td data-label="Live site">Not on the online menu that day; it&#39;s only sometimes available. P2 gave up; P3 settled for a generic sandwich.</td><td data-label="My prototype">All 3 chose Order Online first. P2 and P3 found the item and + Add right away.</td></tr>
         <tr><td data-label="Task">Set ASAP pickup</td><td data-label="Live site">Greyed out for all 3 because testing ran while the cafe was closed.</td><td data-label="My prototype">ASAP was preselected, and P2 noticed it right away.</td></tr>
         <tr><td data-label="Task">Check out</td><td data-label="Live site">Blocked by the scheduling issue.</td><td data-label="My prototype">Not wired yet, so checkout went untested in round 1.</td></tr>
       </tbody>
@@ -365,6 +365,7 @@
       <div class="aside-card honest">
         <p class="hand">reading the results honestly</p>
         <ul class="sb-caveats">
+          <li>The sandwich task wasn&#39;t fair to the live site: I picked an item that&#39;s only sometimes on Songbird&#39;s online menu, and it wasn&#39;t there during testing. That, not the site&#39;s layout, is why 2 of 3 couldn&#39;t find it.</li>
           <li>I weighted behavior over ratings: P1 gave a 5 to a task she didn't finish.</li>
           <li>The ASAP comparison isn't a fair win: the cafe was closed during testing, so the live site only allowed scheduled pickup.</li>
           <li>Order effects: everyone saw my prototype first. Round 2 will alternate which site goes first.</li>
@@ -410,8 +411,8 @@
   </section>
 
   <section class="wrap mile" aria-labelledby="sbOut" data-toc="Results">
-    <h2 id="sbOut">From “users liked it” to evidence</h2>
-    <div class="prose"><p>On my prototype, all 3 participants went straight to Order Online and 2 found the sandwich right away; on the live site, 2 of 3 couldn't find it at all. Testing also showed that the online ordering page on Toast lists items under different names than the cafe's own menu.</p></div>
+    <h2 id="sbOut">What testing actually showed</h2>
+    <div class="prose"><p>Because the sandwich wasn't on the live menu that day, the comparison with the live site doesn't prove my design is better. What testing did show was where my own prototype fell short, and I fixed those problems before designing the mobile version.</p></div>
     <div class="recs">
       <div>
         <p class="hand">next steps</p>
@@ -424,7 +425,7 @@
       <div>
         <p class="hand">what I'd do differently</p>
         <ul>
-          <li>Click through every task exactly as written before the first session</li>
+          <li>Click through every task on both sites the day of testing, and pick items that are always on the menu</li>
           <li>Ask why behind every rating</li>
           <li>Keep benchmarking against the live site</li>
         </ul>
