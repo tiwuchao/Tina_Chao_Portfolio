@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Argus Farm Stop case study · Tina Chao</title>
+<link rel="icon" type="image/png" href="images/seal.png">
+<meta name="description" content="Students cared about local food, but convenience, not price, quality, or even sustainability, decided where they shopped. I followed that finding from interviews and usability tests to a journey map, a landing-page redesign and recommendations for Argus, and now a redesign of the whole Argus website.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tina Chao">
+<meta property="og:title" content="Argus Farm Stop · a UX case study by Tina Chao">
+<meta property="og:description" content="Students cared about local food, but convenience, not price, quality, or even sustainability, decided where they shopped. I followed that finding from interviews and usability tests to a journey map, a landing-page redesign and recommendations for Argus, and now a redesign of the whole Argus website.">
+<meta property="og:url" content="https://tiwuchao.github.io/Tina_Chao_Portfolio/argus.html">
+<meta property="og:image" content="https://tiwuchao.github.io/Tina_Chao_Portfolio/images/og/argus.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Argus Farm Stop case study">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Nanum+Pen+Script&family=Overpass:ital,wght@0,400;0,600;0,800;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&text=%E4%B8%AD%E6%96%87&display=swap">
+<link rel="stylesheet" href="css/site.css">
+<style>.stamp { filter: url(#stamp-ink); } .tt-sticker { filter: url(#sticker-cut); }</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="wc-road" x="-15%" y="-2%" width="130%" height="104%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="2" seed="4" result="warp"/>
+      <feDisplacementMap in="SourceGraphic" in2="warp" scale="10" xChannelSelector="R" yChannelSelector="G" result="wet"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="9" result="grain"/>
+      <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.25" result="grainA"/>
+      <feComposite in="wet" in2="grainA" operator="in" result="mottled"/>
+      <feGaussianBlur in="mottled" stdDeviation=".5"/>
+    </filter>
+    <filter id="sticker-cut" x="-20%" y="-25%" width="140%" height="150%" color-interpolation-filters="sRGB">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="20" result="grown"/>
+      <feGaussianBlur in="grown" stdDeviation="8" result="soft"/>
+      <feComponentTransfer in="soft" result="cut"><feFuncA type="linear" slope="4" intercept="-1.6"/></feComponentTransfer>
+      <feGaussianBlur in="cut" stdDeviation="7" result="blurred"/>
+      <feOffset in="blurred" dx="3" dy="9" result="drop"/>
+      <feFlood flood-color="#2a2018" flood-opacity=".3" result="shc"/>
+      <feComposite in="shc" in2="drop" operator="in" result="shadow"/>
+      <feFlood flood-color="#fffdf8" result="paper"/>
+      <feComposite in="paper" in2="cut" operator="in" result="sticker"/>
+      <feMerge><feMergeNode in="shadow"/><feMergeNode in="sticker"/></feMerge>
+    </filter>
+    <filter id="stamp-ink" x="-4%" y="-4%" width="108%" height="108%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="5" result="speck"/>
+      <feColorMatrix in="speck" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.6 1.25" result="speckA"/>
+      <feComposite in="SourceGraphic" in2="speckA" operator="in"/>
+    </filter>
+    <symbol id="arrow-out" viewBox="0 0 16 16"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<nav class="nav" id="nav" aria-label="Main">
+  <a class="brand" href="./"><img class="seal" src="images/seal.png" alt="" width="256" height="256"><span>Tina Chao</span></a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="./#work" aria-current="true">Work</a></li>
+    <li><a href="./#process">Process</a></li>
+    <li><a href="./#studio">Studio</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="Tina-Chao-Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a></li>
+    <li><a class="hello" href="./#contact">Say hello</a></li>
+  </ul>
+</nav>
+
+<main id="argus" class="view subpage cs">
+  <header class="wrap cs-head" data-toc="Overview">
+    <a class="back" href="./#work">← Back to all entrances</a>
+    <div class="entry-sign">
+      <span class="sign tab"><span class="tabtext">Case study · 2025–26</span></span>
+      <span class="sign"><span class="big">Argus Farm Stop</span></span>
+    </div>
+    <h1 class="cs-title">Making a farm stop feel easier to choose</h1>
+    <p class="cs-lede">Students cared about local food, but convenience, not price, quality, or even sustainability, decided where they shopped. I followed that finding from interviews and usability tests to a journey map, a landing-page redesign and recommendations for Argus, and now a redesign of the whole Argus website.</p>
+  </header>
+
+  <div class="wrap">
+    <figure class="shot cs-shot-cover"><span class="shot-mat"><img src="images/argus-redesign.webp" alt="My redesigned Argus Farm Stop landing page on a laptop: the headline 'Fresh local food, all year round,' a line about shopping from 100+ Michigan farmers online or in-store, Shop online and See store hours buttons, photos of the produce shelves and two smiling staff, and a strip listing 100+ Michigan farmers, pickup and delivery, open year-round and 2 Ann Arbor locations." width="1600" height="979" loading="lazy"></span><figcaption>My landing-page redesign from the class project: what Argus is, why it's worth choosing, and what to expect when you get there</figcaption></figure>
+    <dl class="cs-meta">
+      <div><dt>Role</dt><dd>UX researcher and designer: usability audit, competitive analysis, journey map, redesign</dd></div>
+      <div><dt>Timeline</dt><dd>August to December 2025 class project · redesign continuing in fall 2026</dd></div>
+      <div><dt>Team</dt><dd>3 UX researchers on the class project</dd></div>
+      <div><dt>Tools</dt><dd>Figma, FigJam, Canva, Miro, Zoom, WAVE, Claude</dd></div>
+    </dl>
+
+    <section class="inshort" aria-label="In short">
+      <div><p class="hand">the problem</p><p>Argus had a strong local-food mission and 200+ Michigan farms and food producers on its shelves. But University of Michigan students weren't shopping there.</p></div>
+      <div><p class="hand">what I did</p><p>We interviewed 9 students, tested the site with 6 more over Zoom, and compared five competitors. I led the usability audit and the landing-page redesign, then mapped a student's journey to plan a redesign of the whole site.</p></div>
+      <div><p class="hand">where it stands</p><p>Our findings and recommendations went to Argus's marketing manager. The full-site redesign is in progress, with a second usability test planned on the same eight tasks.</p></div>
+    </section>
+
+    <section class="myrole" aria-labelledby="argusRoleTitle">
+      <h2 class="myrole-label" id="argusRoleTitle">my role</h2>
+      <p class="myrole-lede">I worked with two teammates. We split the sessions between us: I ran 3 of the 9 interviews and 2 of the 6 usability tests. We conducted the competitive analysis together, and I independently led the website usability audit and wireframe redesign. In fall 2026 I picked the project back up to redesign the rest of the site.</p>
+      <dl class="myrole-grid">
+        <div><dt>Research</dt><dd>Student interviews, synthesis contributions, journey map</dd></div>
+        <div><dt>Evaluation</dt><dd>Website usability audit, competitive analysis, round 2 test plan</dd></div>
+        <div><dt>Design</dt><dd>Landing page, navigation and footer; full-site redesign in progress</dd></div>
+        <div><dt>Strategy</dt><dd>Stakeholder recommendations</dd></div>
+      </dl>
+    </section>
+
+    <blockquote class="cs-quote">
+      <p>“It's hard to match your schedule.”</p>
+      <cite>A student we interviewed</cite>
+    </blockquote>
+  </div>
+
+  <!-- MILE 1 -->
+  <section class="wrap mile" aria-labelledby="ar1">
+    <span class="sign mile-tab"><span class="tabtext">Mile 1 · The brief</span></span>
+    <h2 id="ar1">Students weren't shopping there</h2>
+    <div class="prose">
+      <p>Argus Farm Stop is a year-round farmers market and café that's been serving Ann Arbor since 2014. Farmers drop off their food, set their own prices and keep 70% of every sale, so Argus can sell local food every day while the farmers stay on the farm. But despite its strong mission, University of Michigan students largely weren't shopping there.</p>
+      <p>This project started as a class assignment, but I wanted it to mean something beyond the grade. Before we began, I reached out to Argus Farm Stop directly to ask whether this was a problem they were actually facing and whether research like ours could be genuinely useful to them. That conversation shaped everything. It kept our work grounded in real organizational needs rather than hypothetical ones, and it gave me a stakeholder relationship to stay accountable to throughout the process.</p>
+      <p>Were students avoiding Argus because of affordability, convenience, visibility, or something else? We set out to answer:</p>
+    </div>
+    <ul class="questions">
+      <li>How do perceptions of affordability, convenience, and visibility influence students' decisions to visit and make purchases at Argus Farm Stop?</li>
+      <li>How might we improve the digital experience for Argus Farm Stop customers so that they can more easily discover products, understand the Farm Stop model, and convert to loyal shoppers?</li>
+    </ul>
+    <div class="aside-card honest argus-open">
+      <p class="hand">the constraint</p>
+      <p>Argus takes orders on separate stores: the Argus Online Market on Localine, Argus Shop, and Square for gift cards. Only argusfarmstop.com was ours to change, so anything that happens inside those stores became a recommendation instead of a design.</p>
+    </div>
+    <figure class="shot"><span class="shot-mat"><img src="images/argus-before.webp" alt="Argus Farm Stop's existing homepage: a full-width photo of the storefront with plants for sale out front, the words 'Argus Farm Stop' and 'Locally Farmed Food, 7 Days A Week, All Year Long' in large white type, and a menu with Order From Us, About Us, Events, Learn From Us and Get Involved." width="1600" height="908" loading="lazy"></span><figcaption>Before: Argus's existing homepage. It didn't clearly communicate the store's value proposition to first-time visitors.</figcaption></figure>
+  </section>
+
+  <!-- MILE 2 -->
+  <section class="wrap mile" aria-labelledby="ar2">
+    <span class="sign mile-tab"><span class="tabtext">Mile 2 · Listening</span></span>
+    <h2 id="ar2">What we heard from students</h2>
+    <div class="split">
+      <div class="prose">
+        <p>We interviewed students, watched others use the website, and compared Argus with five competitors.</p>
+        <ul class="methods">
+          <li><b>Student interviews</b><span>9 University of Michigan students, split across our team of three</span></li>
+          <li><b>Usability tests</b><span>6 students over Zoom, thinking aloud through real tasks on Argus's site</span></li>
+          <li><b>Website usability audit</b><span>A WAVE accessibility check and heuristic review I led independently, benchmarked against Agricole Farm Stop in Chelsea, MI</span></li>
+          <li><b>Competitive analysis</b><span>Five competitors compared on branding, e-commerce features and storytelling: Fresh Thyme, People's Food Co-op and Centre Markets (direct), Instacart (indirect) and Etsy (analogous)</span></li>
+          <li><b>Affinity synthesis</b><span>Interview and session notes grouped into themes in Miro</span></li>
+        </ul>
+      </div>
+      <figure class="shot argus-quotes-fig"><span class="shot-mat"><img src="images/argus-quotes.webp" alt="A Miro cluster titled 'Convenience commonly outweighs price,' with interview notes from students: one stops at Target on campus because she has no time during the week to stock up, another says 'top is convenience, second is quality, third is price,' and another walked to Target instead of taking a bus to Kroger." width="900" height="1011" loading="lazy"></span><figcaption>One cluster from our Miro board, in students' own words</figcaption></figure>
+    </div>
+    <div class="subblock">
+      <h3>Patterns that kept appearing</h3>
+      <div class="shot-pair argus-boards">
+        <figure class="shot"><a class="shot-mat zoom" href="images/argus-miro-1.webp" target="_blank" rel="noopener" title="Open the full-size Miro board"><img src="images/argus-miro-1.webp" alt="Miro board section 1, headed 'Convenience emerges as the most important factor influencing students' grocery shopping decisions. It outweighs price and quality considerations, reflecting the high value students place on their limited time,' with sticky-note clusters on convenience versus price, distance to the store, produce selection, and perceptions of convenience based on time and location." width="2000" height="1008" loading="lazy"></a><figcaption>Convenience outweighed price and quality</figcaption></figure>
+        <figure class="shot"><a class="shot-mat zoom" href="images/argus-miro-2.webp" target="_blank" rel="noopener" title="Open the full-size Miro board"><img src="images/argus-miro-2.webp" alt="Miro board under the research question, with sections on limited physical and digital promotion of local shopping, low awareness and strong familiarity with chain stores, and how buying fresh local produce connects students with their community and values." width="2200" height="735" loading="lazy"></a><figcaption>Visibility, awareness and values, grouped under our research question</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- MILE 3 -->
+  <section class="wrap mile" aria-labelledby="ar3">
+    <span class="sign mile-tab"><span class="tabtext">Mile 3 · Watching</span></span>
+    <h2 id="ar3">Students wanted to support Argus. The website got in the way.</h2>
+    <div class="prose"><p>To see whether the website itself was part of the barrier, we ran moderated usability tests over Zoom with six University of Michigan students who grocery shop and had ordered groceries online before. Most were first-time visitors to the Argus site. They thought aloud while completing goal-based tasks, and we logged task success, time, errors, hesitations, and comments for each session. Argus provided $10 gift cards as participant incentives.</p></div>
+    <dl class="cs-meta argus-plan">
+      <div><dt>Participants</dt><dd>6 University of Michigan students</dd></div>
+      <div><dt>Method</dt><dd>Moderated think-aloud over Zoom</dd></div>
+      <div><dt>Tasks</dt><dd>Order for pickup, subscribe to the Weekly Produce Box and Monthly Local Cuts Club, find a vendor's website, get food today, send a gift card, find newsletter and SNAP information</dd></div>
+      <div><dt>Measures</dt><dd>Task success, time, errors, hesitations, comments</dd></div>
+    </dl>
+    <p class="hand heard-label">where tasks broke down</p>
+    <div class="plan">
+      <div class="plan-num"><b>0 of 6</b><span>worked out how to get ready-to-eat food the same day</span></div>
+      <div class="plan-num"><b>~1 of 6</b><span>reached a farm's website by looking up who grew a product</span></div>
+      <div class="plan-num"><b>4 of 6</b><span>set up the weekly produce box, one of them with help</span></div>
+    </div>
+    <p class="hand heard-label">three issues came up again and again</p>
+    <ol class="six">
+      <li><b>Text that looked like links but wasn't</b><span>Farm names on product pages were red or bold, so participants tried to click them to find the vendor. One said, “I'm looking for a place to click.”</span></li>
+      <li><b>Getting lost between two sites</b><span>Shopping happens on Localine, a separate platform with a different look. Participants weren't sure which site they were on or how to get back to the Argus homepage.</span></li>
+      <li><b>Subscriptions hidden from the shop</b><span>The produce box and meat subscription weren't in the main catalog. They lived on separate pages with different layouts, so most participants couldn't find them while browsing.</span></li>
+    </ol>
+    <div class="prose"><p>Our clearest takeaway: even students who wanted to support Argus said the experience felt fragmented. One said they'd rather just shop in person.</p></div>
+    <div class="subblock">
+      <h3>The audit I led</h3>
+      <p>I checked the existing site with the WAVE accessibility tool and a heuristic review, then benchmarked it against Agricole Farm Stop in Chelsea, MI. Agricole explains what it is in one sentence above the fold, with a five-item menu. Argus took scrolling to explain itself, behind six menu items with dropdowns, and its three main options were illustrated cards that didn't look clickable.</p>
+      <div class="plan">
+        <div class="plan-num"><b>8</b><span>errors, including missing alt text and a missing form label</span></div>
+        <div class="plan-num"><b>34</b><span>contrast errors, mostly text over the hero photo</span></div>
+        <div class="plan-num"><b>37</b><span>alerts for other accessibility concerns</span></div>
+      </div>
+    </div>
+    <p class="hand heard-label">what competitors did better</p>
+    <div class="made">
+        <article><h3>Say what you are, up front</h3><p>The strongest sites described the business in the hero and gave a clear, immediate call to action.</p></article>
+        <article><h3>Make reordering easy</h3><p>Buy It Again, Favorites and Save for Later were standard elsewhere and missing from Argus.</p></article>
+        <article><h3>Promote what's in season</h3><p>Banners, deals and seasonal promotions gave shoppers a reason to look again. Argus had little of this.</p></article>
+        <article><h3>Put people in the pictures</h3><p>Grids of farmers, real photos and short stories humanized the people behind the food.</p></article>
+    </div>
+  </section>
+
+  <!-- MILE 4 -->
+  <section class="wrap mile" aria-labelledby="ar4">
+    <span class="sign mile-tab"><span class="tabtext">Mile 4 · The insight</span></span>
+    <h2 id="ar4">Convenience outweighed everything else</h2>
+    <div class="prose"><p>Convenience emerged as the single most important factor in students' grocery decisions, outweighing both price and quality. Students shop where they can get in and out quickly, on foot or on their way to class. Even when they were sympathetic to shopping local, most assumed Argus would be more expensive than chain stores, a perception that often wasn't tested. And while students cared about sustainability and community, those values didn't reliably translate into behavior once time, money, and access got in the way.</p></div>
+    <ol class="six">
+      <li><b>Convenience</b><span>Students prioritized getting groceries quickly and easily.</span></li>
+      <li><b>Perceived cost</b><span>Many assumed Argus would be more expensive without actually checking.</span></li>
+      <li><b>Values ≠ behavior</b><span>Students cared about sustainability and community, but those values didn't overcome time and access barriers.</span></li>
+      <li><b>Lack of familiarity</b><span>The Farm Stop model itself required explanation.</span></li>
+    </ol>
+    <figure class="shot narrow"><span class="shot-mat"><img src="images/argus-findings.webp" alt="A slide titled '7 Key Interview Findings': convenience above all, price perception of local produce, limited physical and digital visibility, low awareness and strong chain familiarity, community empowerment and values, in-person shopping, and sustainability." width="1400" height="786" loading="lazy"></span><figcaption>The seven interview findings behind those four patterns</figcaption></figure>
+
+    <div class="subblock">
+      <h3>Meet the person behind the pattern</h3>
+      <p>Sophie doesn't need to be convinced that local food matters. If shopping local requires extra planning, she won't do it consistently. Every participant was a student, so I kept to one persona rather than inventing others the research couldn't support.</p>
+      <figure class="shot"><span class="shot-mat"><img src="images/argus-persona.webp" alt="Persona card for Sophie Dyer, a University of Michigan junior in Environmental Studies who says 'I care about where my food comes from, but I can't always afford to shop the way that I want to.' She doesn't own a car, prioritizes time and ease, often chooses the most convenient store, and wants to discover local options without extra research." width="1600" height="904" loading="lazy"></span><figcaption>Sophie, our student persona</figcaption></figure>
+    </div>
+
+    <div class="subblock">
+      <h3>Following Sophie through a week</h3>
+      <p>I mapped Sophie's journey from her usual grocery run to whether she comes back the next week, and tagged every pain point with the finding behind it. Her two lowest points both happen on the website: checking whether Argus is worth the trip, and picking how to shop. That's where design could help her most.</p>
+      <figure class="shot"><a class="shot-mat zoom" href="images/argus-journey.webp" target="_blank" rel="noopener" title="Open the full-size journey map"><img src="images/argus-journey.webp" alt="Journey map for Sophie across six stages: weekly grocery run, hears about Argus, checks the website, picks how to shop, shops, and next week. Rows show what she does, what she's thinking, how she feels, touchpoints, pain points tagged with research findings, and how-might-we opportunities. Her feelings start neutral, rise to curious when she hears about Argus, drop to confused on the website and frustrated when picking how to shop, rise to good but price-conscious while shopping, and settle below neutral as habit wins the next week." width="2560" height="2032" loading="lazy"></a><figcaption>Sophie's journey, built from all three studies. Click to open it full size.</figcaption></figure>
+    </div>
+
+    <div class="reframe argus-hmw">
+      <div class="rf before"><p class="hand">what we found</p><p class="rf-text">Convenience, not price or values, decided where students shopped.</p></div>
+      <svg class="rf-arrow" viewBox="0 0 80 40" aria-hidden="true"><path d="M4 22 C 24 10, 46 30, 70 18 M60 10 L71 18 L61 27" fill="none" stroke="#a64d2a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="rf after"><p class="hand">how might we</p><p class="rf-text">How might we make Argus feel easier to choose?</p></div>
+    </div>
+  </section>
+
+  <!-- MILE 5 -->
+  <section class="wrap mile" aria-labelledby="ar5">
+    <span class="sign mile-tab"><span class="tabtext">Mile 5 · The first design</span></span>
+    <h2 id="ar5">Making the case before the trip</h2>
+    <div class="prose">
+      <p>If convenience was the strongest driver, the website couldn't make students work to understand why Argus was worth the trip.</p>
+      <p>For the class project, I redesigned the landing-page experience around three things students needed before deciding to visit: what Argus is, why it is worth choosing, and what they can expect when they get there. The redesign is at the top of this page.</p>
+    </div>
+    <ol class="flow-steps argus-three">
+      <li><b>What Argus is</b><span>A clear value proposition above the fold</span></li>
+      <li><b>Why it's worth choosing</b><span>Farm stories, sourcing and community impact</span></li>
+      <li><b>What to expect</b><span>Hours, locations, pickup and delivery</span></li>
+    </ol>
+    <article class="concept">
+      <h3><span class="num">Design rationale</span>What we found, and what I designed</h3>
+      <table class="cs-table argus-why">
+        <caption class="sr-only">Each finding from research and the audit, and the part of the landing page that responds to it</caption>
+        <thead><tr><th scope="col">What we found</th><th scope="col">What I designed</th></tr></thead>
+        <tbody>
+          <tr><td data-label="What we found">Argus took scrolling to explain what it is</td><td data-label="What I designed">A hero that says it in one line: fresh local food from Michigan farmers, online or in-store</td></tr>
+          <tr><td data-label="What we found">Six menu items with dropdowns</td><td data-label="What I designed">Five menu items and one Shop Now button</td></tr>
+          <tr><td data-label="What we found">The main options were illustrated cards that didn't look clickable</td><td data-label="What I designed">Two clear buttons: Shop online and See store hours</td></tr>
+          <tr><td data-label="What we found">The Farm Stop model needed explaining</td><td data-label="What I designed">A “How it works” section: three easy ways to get local food</td></tr>
+          <tr><td data-label="What we found">Convenience decides where students shop</td><td data-label="What I designed">Pickup and delivery, open year-round, and Ann Arbor locations, right under the hero</td></tr>
+        </tbody>
+      </table>
+    </article>
+    <div class="subblock">
+      <h3>Navigation and footer</h3>
+      <p>The menu and footer follow every visitor to every page, so I reworked those too: fewer layers to dig through, and labels that say where you'll end up.</p>
+      <figure class="shot"><span class="shot-mat"><img src="images/argus-nav.webp" alt="Two navigation bars. Before: the existing Argus menu over a storefront photo, with Home, Order From Us, About Us, Events, Learn From Us and Get Involved, and an open dropdown listing grocery pickup and delivery, weekly produce box, monthly local cuts club, catering, gift cards and wholesale. After: a solid red bar with the Argus logo and Shop Online, Visit Stores, Events, Producers, About Us and Contact." width="1864" height="552" loading="lazy"></span><figcaption>Before, on top: menus hidden in dropdowns. After: one row of plain labels.</figcaption></figure>
+      <figure class="shot"><span class="shot-mat"><img src="images/argus-footer.webp" alt="Two footers. Before: a dark green footer with long underlined link lists under Shop Online, Info and Get Involved, plus addresses and a copyright line. After: a white footer with four short groups (Shop, Argus Info, Events and News, Connect) and a red newsletter sign-up bar with an email field and Submit button." width="1689" height="677" loading="lazy"></span><figcaption>Before, in green: long lists of links. After: four short groups and a newsletter sign-up.</figcaption></figure>
+    </div>
+    <div class="aside-card honest argus-open">
+      <p class="hand">still open</p>
+      <p>The landing page didn't fix everything we saw. Shopping happens on separate stores this project can't change, so the handoff, hidden subscriptions and farm-name links went into my recommendations instead. And one page can't carry a whole visit: after the first click, students still had to find subscriptions, same-day food, SNAP and the farmers on their own.</p>
+    </div>
+  </section>
+
+  <section class="wrap mile" aria-labelledby="arRecs" data-toc="Recommendations">
+    <h2 id="arRecs">What I recommended</h2>
+    <div class="prose"><p>I delivered a formal research presentation to Argus Farm Stop's marketing manager, translating our UX findings into a prioritized set of actionable recommendations organized by impact and implementation effort.</p></div>
+    <ol class="six argus-recs">
+      <li><b>Website &amp; digital presence</b><span>Unify the Argus site and the shopping experience so people never feel like they've left. Put subscriptions in the main catalog, link every farm name to its profile, and add Favorites and Buy It Again for quick reorders.</span></li>
+      <li><b>Brand positioning</b><span>Lead with what makes Argus different: a market and café where you can meet the farmers who grow your food, with a clear tagline, photos of real producers and customers, and a simple explanation of the Farm Stop model.</span></li>
+      <li><b>Customer acquisition strategy</b><span>Awareness spreads mostly through word of mouth. Reach students with visible promotions and seasonal items, the café and ready-to-eat food they already look for, and proof that pickup and SNAP make Argus more accessible than they assume.</span></li>
+    </ol>
+    <figure class="shot narrow"><span class="shot-mat"><img src="images/argus-deck.webp" alt="Title slide reading 'Argus Farm Stop Business Plan, by Tina Chao,' with the Argus Farm Stop logo on a green panel." width="1200" height="654" loading="lazy"></span><figcaption>From the deck I presented to Argus</figcaption></figure>
+  </section>
+
+  <!-- MILE 6 -->
+  <section class="wrap mile" aria-labelledby="ar6">
+    <span class="sign mile-tab"><span class="tabtext">Mile 6 · What's next</span></span>
+    <h2 id="ar6">From one page to the whole site</h2>
+    <div class="prose">
+      <p>A better first page wasn't enough. In testing, students got lost after the first click: between Argus and its stores, among the subscriptions, and looking for food they could get today. So I'm redesigning the rest of argusfarmstop.com, its navigation, pages and wording, so people can do everything the round 1 participants tried, without the trouble they ran into.</p>
+      <p>To move faster, I used AI (Claude) to draft wireframes for every page of the site. The drafts are a starting point, not the design: I'm going through them page by page, and each one has to answer to a finding or it goes.</p>
+    </div>
+    <p class="hand heard-label">questions the redesign has to answer</p>
+    <ul class="questions">
+      <li>How does a student without a car get there from campus?</li>
+      <li>What does someone who just heard about Argus from a friend need to see first?</li>
+      <li>What does a week of groceries actually cost if you don't use SNAP?</li>
+      <li>What gives Sophie a reason to come back next week?</li>
+    </ul>
+    <div class="subblock">
+      <h3>Then test it against round 1</h3>
+      <div class="prose"><p>Round 2 reuses the same eight tasks with 5–6 new University of Michigan students over Zoom, so the two rounds compare directly. I'll count a fix as working when at least 5 of 6 participants complete its task without help, and no new problem shows up in two or more sessions.</p></div>
+      <table class="cs-table">
+        <caption class="sr-only">Each usability task, how many round 1 participants completed it on the live site, and the round 2 result, still to come</caption>
+        <thead><tr><th scope="col">Task</th><th scope="col">Round 1 · live site</th><th scope="col">Round 2 · redesign</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Task">Start a weekly produce box</td><td data-label="Round 1 · live site">4 of 6 (1 with help)</td><td data-label="Round 2 · redesign">Testing soon</td></tr>
+          <tr><td data-label="Task">Find who grew the kale, and their website</td><td data-label="Round 1 · live site">About 1 of 6</td><td data-label="Round 2 · redesign">Testing soon</td></tr>
+          <tr><td data-label="Task">Find SNAP support</td><td data-label="Round 1 · live site">5 of 6</td><td data-label="Round 2 · redesign">Testing soon</td></tr>
+          <tr><td data-label="Task">Buy meat monthly</td><td data-label="Round 1 · live site">5 of 6</td><td data-label="Round 2 · redesign">Testing soon</td></tr>
+          <tr><td data-label="Task">Join the newsletter and comment on a blog post</td><td data-label="Round 1 · live site">5 of 6</td><td data-label="Round 2 · redesign">Testing soon</td></tr>
+          <tr><td data-label="Task">Get ready-to-eat food today</td><td data-label="Round 1 · live site">0 of 6</td><td data-label="Round 2 · redesign">Testing soon</td></tr>
+          <tr><td data-label="Task">Send a gift card by email</td><td data-label="Round 1 · live site">6 of 6</td><td data-label="Round 2 · redesign">Testing soon</td></tr>
+          <tr><td data-label="Task">Find the vendors' share of each sale</td><td data-label="Round 1 · live site">6 of 6</td><td data-label="Round 2 · redesign">Testing soon</td></tr>
+        </tbody>
+      </table>
+      <p class="hand heard-label">what's new in round 2</p>
+      <ul class="features">
+        <li><b>An ease rating</b> from 1 to 7 after every task, and why</li>
+        <li><b>The path each person took</b>, not just whether they arrived</li>
+        <li><b>Dead clicks</b>: anything people expected to work that didn't</li>
+        <li><b>A fairer food task</b>: round 1's wording implied you could order same-day food online</li>
+      </ul>
+    </div>
+    <p class="hand heard-label">the plan</p>
+    <ol class="flow-steps">
+      <li><b>Decide</b><span>Keep, change or cut each AI-drafted page, depending on whether it answers a finding</span></li>
+      <li><b>Build</b><span>A high-fidelity prototype, with the contrast and alt-text fixes from the audit</span></li>
+      <li><b>Test</b><span>Round 2 with 5–6 students on the same eight tasks</span></li>
+      <li><b>Compare</b><span>Round 1 against round 2, task by task</span></li>
+      <li><b>Share</b><span>Bring the results back to Argus's marketing manager</span></li>
+    </ol>
+  </section>
+
+  <section class="wrap mile" aria-label="What I'd do differently">
+    <div class="argus-learned">
+      <div class="aside-card honest">
+        <p class="hand">what I'd do differently</p>
+        <p>The $10 gift cards from Argus made recruiting easy: people said yes to giving us their time, and we never struggled to fill sessions. After LendMate, where we had no incentive and recruiting was hard, that difference stuck with me. Next time I'd also recruit students who already shop at Argus alongside ones who'd never heard of it, so we could build more than one student persona.</p>
+      </div>
+    </div>
+    <p class="still">Thank you to my teammates Olivia Pinto and Lulu Zhang, and to Alex, Argus Farm Stop's marketing manager.</p>
+    <p class="still sb-ai">AI use: I used Claude (Anthropic) to draft wireframes for the full-site redesign, build the journey map from our findings, plan the second usability test, and help write this case study.</p>
+  </section>
+
+  <section class="wrap reflection" aria-label="Reflection" data-toc="Reflection">
+    <p class="eyebrow">Reflection</p>
+    <p class="refl">I was surprised how many students already cared about shopping local. Caring was never the problem. Fitting it into a full week was.</p>
+  </section>
+
+  <nav class="wrap cs-next" aria-label="Next">
+    <a class="back" href="./#work">← All entrances</a>
+    <a class="next-sign sign" href="songbird.html"><span class="tabtext">Next entrance</span><span class="big">Songbird Cafe →</span></a>
+  </nav>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./"><img class="seal" src="images/seal.png" alt="" width="256" height="256"><span>Tina Wu Chao</span></a>
+    <span>© 2026 · Watercolor versions of my own photos</span>
+  </div>
+</footer>
+
+<script src="js/site.js"></script>
+</body>
+</html>

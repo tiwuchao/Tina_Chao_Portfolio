@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fourth Soil Farm case study · Tina Chao</title>
+<link rel="icon" type="image/png" href="images/seal.png">
+<meta name="description" content="A microgreens startup had a good product, a basic landing page and a confusing way to buy. I helped turn that into a cohesive brand, a clearer storefront and a steadier local following.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tina Chao">
+<meta property="og:title" content="Fourth Soil Farm · a UX case study by Tina Chao">
+<meta property="og:description" content="A microgreens startup had a good product, a basic landing page and a confusing way to buy. I helped turn that into a cohesive brand, a clearer storefront and a steadier local following.">
+<meta property="og:url" content="https://tiwuchao.github.io/Tina_Chao_Portfolio/fourth-soil.html">
+<meta property="og:image" content="https://tiwuchao.github.io/Tina_Chao_Portfolio/images/og/fourth-soil.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fourth Soil Farm case study">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Nanum+Pen+Script&family=Overpass:ital,wght@0,400;0,600;0,800;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&text=%E4%B8%AD%E6%96%87&display=swap">
+<link rel="stylesheet" href="css/site.css">
+<style>.stamp { filter: url(#stamp-ink); } .tt-sticker { filter: url(#sticker-cut); }</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="wc-road" x="-15%" y="-2%" width="130%" height="104%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="2" seed="4" result="warp"/>
+      <feDisplacementMap in="SourceGraphic" in2="warp" scale="10" xChannelSelector="R" yChannelSelector="G" result="wet"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="9" result="grain"/>
+      <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.25" result="grainA"/>
+      <feComposite in="wet" in2="grainA" operator="in" result="mottled"/>
+      <feGaussianBlur in="mottled" stdDeviation=".5"/>
+    </filter>
+    <filter id="sticker-cut" x="-20%" y="-25%" width="140%" height="150%" color-interpolation-filters="sRGB">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="20" result="grown"/>
+      <feGaussianBlur in="grown" stdDeviation="8" result="soft"/>
+      <feComponentTransfer in="soft" result="cut"><feFuncA type="linear" slope="4" intercept="-1.6"/></feComponentTransfer>
+      <feGaussianBlur in="cut" stdDeviation="7" result="blurred"/>
+      <feOffset in="blurred" dx="3" dy="9" result="drop"/>
+      <feFlood flood-color="#2a2018" flood-opacity=".3" result="shc"/>
+      <feComposite in="shc" in2="drop" operator="in" result="shadow"/>
+      <feFlood flood-color="#fffdf8" result="paper"/>
+      <feComposite in="paper" in2="cut" operator="in" result="sticker"/>
+      <feMerge><feMergeNode in="shadow"/><feMergeNode in="sticker"/></feMerge>
+    </filter>
+    <filter id="stamp-ink" x="-4%" y="-4%" width="108%" height="108%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="5" result="speck"/>
+      <feColorMatrix in="speck" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.6 1.25" result="speckA"/>
+      <feComposite in="SourceGraphic" in2="speckA" operator="in"/>
+    </filter>
+    <symbol id="arrow-out" viewBox="0 0 16 16"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<nav class="nav" id="nav" aria-label="Main">
+  <a class="brand" href="./"><img class="seal" src="images/seal.png" alt="" width="256" height="256"><span>Tina Chao</span></a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="./#work" aria-current="true">Work</a></li>
+    <li><a href="./#process">Process</a></li>
+    <li><a href="./#studio">Studio</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="Tina-Chao-Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a></li>
+    <li><a class="hello" href="./#contact">Say hello</a></li>
+  </ul>
+</nav>
+
+<main id="fourth-soil" class="view subpage cs">
+  <header class="wrap cs-head" data-toc="Overview">
+    <a class="back" href="./#work">← Back to all entrances</a>
+    <div class="entry-sign">
+      <span class="sign tab"><span class="tabtext">Case study · 2024</span></span>
+      <span class="sign"><span class="big">Fourth Soil Farm</span></span>
+    </div>
+    <h1 class="cs-title">Building trust for a farm customers couldn't visit</h1>
+    <p class="cs-lede">A microgreens startup had a good product, a basic landing page and a confusing way to buy. I helped turn that into a cohesive brand, a clearer storefront and a steadier local following.</p>
+  </header>
+
+  <div class="wrap">
+    <figure class="frame cs-cover"><img src="images/work-fourth-soil.webp" alt="Fourth Soil Farm's redesigned homepage: a green banner offering free delivery with a microgreen subscription, the farm's name, and a photo of fresh microgreens with an Order Now button." width="1200" height="800" loading="lazy"></figure>
+    <dl class="cs-meta">
+      <div><dt>Role</dt><dd>Research, brand and design</dd></div>
+      <div><dt>Timeline</dt><dd>April to August 2024 · internship</dd></div>
+      <div><dt>Worked with</dt><dd>Founder Karl Thuemmel</dd></div>
+      <div><dt>Tools</dt><dd>Figma, Canva, Miro, Wix</dd></div>
+    </dl>
+
+    <section class="inshort" aria-label="In short">
+      <div><p class="hand">the problem</p><p>A good product with little digital infrastructure: a basic landing page, a confusing purchase flow, no cohesive identity and limited reach.</p></div>
+      <div><p class="hand">what I did</p><p>Turned the founder's values into a brand, shot original product photos, rebuilt the storefront on Wix and kept a steady social and ad calendar.</p></div>
+      <div><p class="hand">what changed</p><p>Over the internship, link clicks to the store doubled and social engagement grew 30.6%. The farm also had a cohesive brand to grow from.</p></div>
+    </section>
+  </div>
+
+  <section class="wrap mile" aria-labelledby="fs1">
+    <span class="sign mile-tab"><span class="tabtext">Mile 1 · The brief</span></span>
+    <h2 id="fs1">A farm people couldn't walk into</h2>
+    <div class="prose">
+      <p>Fourth Soil Farm grows microgreens. When I joined, it had a basic landing page and a few scattered Instagram and Facebook posts. Buying was confusing, there was no consistent look, and not many people knew the farm existed.</p>
+      <p>Without clear trust signals, it was hard for likely customers to find the farm, or to feel safe buying from it.</p>
+    </div>
+  </section>
+
+  <section class="wrap mile" aria-labelledby="fs2">
+    <span class="sign mile-tab"><span class="tabtext">Mile 2 · Listening</span></span>
+    <h2 id="fs2">Starting with the founder</h2>
+    <div class="prose">
+      <p>I started with conversations with the founder about his values, his audience and how he wanted the farm to be seen. To hear the customer side, I did one customer interview, studied competitors, and spent time in microgreen Facebook groups to see what growers and buyers talked about. Three themes kept coming up, and they became the brief for everything I made.</p>
+    </div>
+    <ul class="themes" aria-label="Three brand themes">
+      <li>Dependability</li><li>Personal connection</li><li>Quiet integrity</li>
+    </ul>
+  </section>
+
+  <section class="wrap mile" aria-labelledby="fs3">
+    <span class="sign mile-tab"><span class="tabtext">Mile 3 · The insight</span></span>
+    <h2 id="fs3">Trust had to come through the screen</h2>
+    <div class="prose">
+      <p>Customers couldn't see the greens growing or meet the founder in person. The brand, the photos and the buying flow had to do that work instead.</p>
+    </div>
+  </section>
+
+  <section class="wrap mile" aria-labelledby="fs4">
+    <span class="sign mile-tab"><span class="tabtext">Mile 4 · What surprised me</span></span>
+    <h2 id="fs4">The growth we didn't take</h2>
+    <div class="split even">
+      <div class="prose">
+        <p>Along the way we explored a possible Michigan-wide distribution contact. The founder chose not to pursue it, to keep the business personal and local.</p>
+        <p>It changed how I think about success for a small business. A bigger opportunity isn't a better one if it doesn't fit the owner's goals, resources and capacity.</p>
+      </div>
+      <div class="aside-card">
+        <p class="hand">in person, too</p>
+        <p>Not all of the work was on a screen. I also helped build relationships face to face at the Ann Arbor Farmers Market.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap mile" aria-labelledby="fs5">
+    <span class="sign mile-tab"><span class="tabtext">Mile 5 · The design</span></span>
+    <h2 id="fs5">What I made</h2>
+    <div class="made">
+      <article><h3>Brand identity</h3><p>A simple logo, an earth-tone palette and plain typography, meant to feel warm but professional.</p></article>
+      <article><h3>Product photography</h3><p>Original iPhone photos of texture, freshness and light, in place of stock images.</p></article>
+      <article><h3>A rebuilt storefront</h3><p>The site moved to Wix with a familiar browse, select and checkout flow, so buying took less effort.</p></article>
+      <article><h3>Marketing and growth</h3><p>A consistent Instagram and Facebook calendar, and Meta ad campaigns aimed at local families and restaurants.</p></article>
+    </div>
+  </section>
+
+  <section class="wrap mile" aria-labelledby="fs6" data-toc="Where it landed">
+    <h2 id="fs6">Where it landed</h2>
+    <div>
+      <div>
+        <div class="plan single">
+          <div class="plan-num"><b>2×</b><span>link clicks to the store over the internship</span></div>
+          <div class="plan-num"><b>+30.6%</b><span>social engagement over the internship</span></div>
+        </div>
+        <p class="prose-s">The farm came out with a more cohesive brand, a clearer way to buy and a stronger base for reaching local customers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap reflection" aria-label="Reflection" data-toc="Reflection">
+    <p class="eyebrow">Reflection</p>
+    <p class="refl">Designing for a small business means fitting the owner's goals, resources and capacity. Sometimes that means turning down a growth opportunity.</p>
+  </section>
+
+  <nav class="wrap cs-next" aria-label="Next">
+    <a class="back" href="./#work">← All entrances</a>
+    <a class="next-sign sign" href="in2being.html"><span class="tabtext">Back to the first entrance</span><span class="big">in2being →</span></a>
+  </nav>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./"><img class="seal" src="images/seal.png" alt="" width="256" height="256"><span>Tina Wu Chao</span></a>
+    <span>© 2026 · Watercolor versions of my own photos</span>
+  </div>
+</footer>
+
+<script src="js/site.js"></script>
+</body>
+</html>

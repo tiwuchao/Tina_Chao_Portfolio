@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Songbird Cafe case study · Tina Chao</title>
+<link rel="icon" type="image/png" href="images/seal.png">
+<meta name="description" content="A responsive redesign of a neighborhood cafe&#x27;s website, so people can check hours, find dietary options, and order ahead for pickup.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tina Chao">
+<meta property="og:title" content="Songbird Cafe · a UX case study by Tina Chao">
+<meta property="og:description" content="A responsive redesign of a neighborhood cafe&#x27;s website, so people can check hours, find dietary options, and order ahead for pickup.">
+<meta property="og:url" content="https://tiwuchao.github.io/Tina_Chao_Portfolio/songbird.html">
+<meta property="og:image" content="https://tiwuchao.github.io/Tina_Chao_Portfolio/images/og/songbird.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Songbird Cafe case study">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Nanum+Pen+Script&family=Overpass:ital,wght@0,400;0,600;0,800;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&text=%E4%B8%AD%E6%96%87&display=swap">
+<link rel="stylesheet" href="css/site.css">
+<style>.stamp { filter: url(#stamp-ink); } .tt-sticker { filter: url(#sticker-cut); }</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="wc-road" x="-15%" y="-2%" width="130%" height="104%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="2" seed="4" result="warp"/>
+      <feDisplacementMap in="SourceGraphic" in2="warp" scale="10" xChannelSelector="R" yChannelSelector="G" result="wet"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="9" result="grain"/>
+      <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.25" result="grainA"/>
+      <feComposite in="wet" in2="grainA" operator="in" result="mottled"/>
+      <feGaussianBlur in="mottled" stdDeviation=".5"/>
+    </filter>
+    <filter id="sticker-cut" x="-20%" y="-25%" width="140%" height="150%" color-interpolation-filters="sRGB">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="20" result="grown"/>
+      <feGaussianBlur in="grown" stdDeviation="8" result="soft"/>
+      <feComponentTransfer in="soft" result="cut"><feFuncA type="linear" slope="4" intercept="-1.6"/></feComponentTransfer>
+      <feGaussianBlur in="cut" stdDeviation="7" result="blurred"/>
+      <feOffset in="blurred" dx="3" dy="9" result="drop"/>
+      <feFlood flood-color="#2a2018" flood-opacity=".3" result="shc"/>
+      <feComposite in="shc" in2="drop" operator="in" result="shadow"/>
+      <feFlood flood-color="#fffdf8" result="paper"/>
+      <feComposite in="paper" in2="cut" operator="in" result="sticker"/>
+      <feMerge><feMergeNode in="shadow"/><feMergeNode in="sticker"/></feMerge>
+    </filter>
+    <filter id="stamp-ink" x="-4%" y="-4%" width="108%" height="108%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="5" result="speck"/>
+      <feColorMatrix in="speck" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.6 1.25" result="speckA"/>
+      <feComposite in="SourceGraphic" in2="speckA" operator="in"/>
+    </filter>
+    <symbol id="arrow-out" viewBox="0 0 16 16"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<nav class="nav" id="nav" aria-label="Main">
+  <a class="brand" href="./"><img class="seal" src="images/seal.png" alt="" width="256" height="256"><span>Tina Chao</span></a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="./#work" aria-current="true">Work</a></li>
+    <li><a href="./#process">Process</a></li>
+    <li><a href="./#studio">Studio</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="Tina-Chao-Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a></li>
+    <li><a class="hello" href="./#contact">Say hello</a></li>
+  </ul>
+</nav>
+
+<main id="songbird" class="view subpage cs">
+  <header class="wrap cs-head" data-toc="Overview">
+    <a class="back" href="./#work">← Back to all entrances</a>
+    <div class="entry-sign">
+      <span class="sign tab"><span class="tabtext">Class project · 2026</span></span>
+      <span class="sign"><span class="big">Songbird Cafe</span></span>
+    </div>
+    <h1 class="cs-title">Ordering ahead without the guesswork</h1>
+    <p class="cs-lede">A responsive redesign of a neighborhood cafe's website, so people can check hours, find dietary options, and order ahead for pickup.</p>
+  </header>
+
+  <div class="wrap">
+    <figure class="shot sb-cover">
+      <div class="sb-devices">
+        <span class="shot-mat" style="--w:360px"><img src="images/sb-home-desktop.webp" alt="The redesigned Songbird Cafe homepage on desktop: a hero reading 'Breakfast, lunch, coffee &amp; vibes on Ann Arbor's North side' with Order online and View menu buttons, an hours bar, Songbird favorites cards, an about section, and Catering, Gift Cards and Wholesale cards." width="408" height="1024" loading="lazy"></span>
+        <span class="shot-mat thin" style="--w:113px"><img src="images/sb-home-mobile.webp" alt="The same homepage on mobile, with the hours bar under the logo, a stacked hero, a full-width Order online button and a brown footer." width="151" height="1428" loading="lazy"></span>
+      </div>
+      <figcaption>Final homepage on desktop (1280 px) and mobile (499 px).</figcaption>
+    </figure>
+    <dl class="cs-meta">
+      <div><dt>Role</dt><dd>Solo: field research, UX/UI design, prototyping, usability testing</dd></div>
+      <div><dt>Timeline</dt><dd>September to October 2026 · SI 407 Advanced Design, individual project</dd></div>
+      <div><dt>Platforms</dt><dd>Responsive website, desktop and mobile</dd></div>
+      <div><dt>Tools</dt><dd>Figma, Dev Mode, FigJam, paper sketches</dd></div>
+    </dl>
+    <p class="cs-links">
+      <a href="https://www.figma.com/proto/230vKczMytsrG17cGHsmda/407_ResponsiveProject_tiwuchao?node-id=385-11720&amp;starting-point-node-id=385-11720" target="_blank" rel="noopener">Clickable prototype ↗</a>
+      <a href="https://www.figma.com/design/230vKczMytsrG17cGHsmda/407_ResponsiveProject_tiwuchao?node-id=385-10723" target="_blank" rel="noopener">Figma file ↗</a>
+      <a href="https://www.figma.com/design/230vKczMytsrG17cGHsmda/407_ResponsiveProject_tiwuchao?node-id=1-6&amp;m=dev" target="_blank" rel="noopener">Dev Mode handoff ↗</a>
+    </p>
+
+    <section class="inshort" aria-label="In short">
+      <div><p class="hand">the problem</p><p>Visitors come to the site for one quick answer: hours, dietary options, or what kind of place it is. Those answers are hard to find, and the Toast ordering page lists items under different names than the cafe's menu.</p></div>
+      <div><p class="hand">what I did</p><p>An on-site visit with 6 intercept interviews (11 adults), a conversation with on-duty staff, and a review analysis. Then 8 homepage sketches, a desktop prototype, 6 mobile wireframes, and a usability test against the live site.</p></div>
+      <div><p class="hand">the result</p><p>On the live site, 2 of 3 participants couldn't find the sandwich they were asked to order. On my prototype, all 3 went straight to Order Online, and 2 of 3 found the item and its add button right away.</p></div>
+    </section>
+
+    <div class="cs-quote cs-thesis">
+      <p class="hand">overview</p>
+      <p>Most people walk in without checking the website. I redesigned it for the people who do.</p>
+    </div>
+  </div>
+
+  <!-- MILE 1 -->
+  <section class="wrap mile" aria-labelledby="sb1">
+    <span class="sign mile-tab"><span class="tabtext">Mile 1 · The brief</span></span>
+    <h2 id="sb1">The website doesn't answer the questions people bring to it</h2>
+    <div class="prose"><p>Songbird's in-person experience builds loyal regulars, but the site doesn't show the current menu, dietary options, hours, or what kind of place it is. First-timers arrive uncertain, and staff absorb questions the site could answer.</p></div>
+    <div class="recs sb-goals">
+      <div>
+        <p class="hand">user goals</p>
+        <ul>
+          <li>Know whether it's open and how to get there (hours changed this year; parking matters)</li>
+          <li>Find food that fits a dietary need: gluten-free, dairy-free, sugar-free</li>
+          <li>Skip the wait at peak times (staff named an 11:30–12:40 rush)</li>
+          <li>Understand what kind of place it is before visiting</li>
+        </ul>
+      </div>
+      <div>
+        <p class="hand">business goals</p>
+        <ul>
+          <li>A community hub with loyal, repeat customers</li>
+          <li>Less work for staff</li>
+          <li>Grow existing revenue: online orders through Toast, e-gift cards, wholesale bakery</li>
+        </ul>
+      </div>
+    </div>
+    <div class="aside-card honest sb-scope">
+      <p class="hand">scope, and how it started</p>
+      <dl>
+        <div><dt>Scope</dt><dd>The homepage and the online ordering flow (menu, item details, cart, checkout, confirmation) on desktop and mobile.</dd></div>
+        <div><dt>How it started</dt><dd>Songbird was on a class list of local businesses whose websites had room to improve. Songbird didn't ask for a redesign; I chose it because I like going there.</dd></div>
+        <div><dt>Why ordering</dt><dd>Songbird takes orders through Toast, a third-party platform it can't redesign. My flow is a concept for ordering inside Songbird's own site, built around the lunch rush staff described.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- MILE 2 -->
+  <section class="wrap mile" aria-labelledby="sb2">
+    <span class="sign mile-tab"><span class="tabtext">Mile 2 · Listening</span></span>
+    <h2 id="sb2">Three sources pointed to the same problems</h2>
+    <div class="prose"><p>I combined observation, interviews, and online reviews so no single source decided the direction. The reviews confirmed what I heard in person and contradicted none of it.</p></div>
+    <ul class="methods">
+      <li><b>Observation</b><span>3 timed snapshots during a 2-hour visit. Noise went 5/10 → 2/10 → 7/10, with 6 people in line as lunch began.</span></li>
+      <li><b>Intercept interviews</b><span>6 groups, 11 adults: families, remote workers, first-timers, regulars. Goals, ordering friction, and how people use the website.</span></li>
+      <li><b>Conversation with on-duty staff</b><span>15–20 minutes. The cafe's goals and what staff wish customers knew.</span></li>
+      <li><b>Review analysis</b><span>Yelp, Tripadvisor, Facebook, Foursquare, and the current site, to see whether interview findings held up at scale.</span></li>
+    </ul>
+    <div class="subblock">
+      <h3>Heard in person, echoed in reviews</h3>
+      <table class="cs-table sb-echo">
+        <caption class="sr-only">What I heard in person, and what reviews and the current site showed</caption>
+        <thead><tr><th scope="col">Heard in person</th><th scope="col">Reviews and the site</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Heard in person">The menu sits away from the kiosk; staff skip the wall menu.</td><td data-label="Reviews and the site">Reviews: the menu is confusing at the ordering stage.</td></tr>
+          <tr><td data-label="Heard in person">A regular checks the site only for hours, because they changed.</td><td data-label="Reviews and the site">Reviews: people are caught off guard by the 3 PM close.</td></tr>
+          <tr><td data-label="Heard in person">A first-timer couldn't find sugar-free options online.</td><td data-label="Reviews and the site">The site's menu page was mid-update with a placeholder.</td></tr>
+          <tr><td data-label="Heard in person">Staff named an 11:30–12:40 rush.</td><td data-label="Reviews and the site">Reviews: waits stretch at peak times.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- MILE 3 -->
+  <section class="wrap mile" aria-labelledby="sb3">
+    <span class="sign mile-tab"><span class="tabtext">Mile 3 · The insight</span></span>
+    <h2 id="sb3">Ordering is easy in person, but the website leaves people guessing</h2>
+    <ol class="six">
+      <li><b>The website is a pre-visit tool, not a habit</b><span>5 of 6 groups walked in without checking it. People who went online came for one answer: hours, parking, or dietary options.</span></li>
+      <li><b>First-timers are the ones who look ahead</b><span>The only group that checked the site was visiting for the first time, and they couldn't find what they wanted.</span></li>
+      <li><b>Dietary options build loyalty</b><span>Gluten-free and dairy-free regulars named those options as a reason they return.</span></li>
+      <li><b>Small in-person snags add up</b><span>Silverware you have to ask for, a menu far from the kiosk, drink sizes in ounces.</span></li>
+      <li><b>Unwritten house rules cost staff time</b><span>Staff want customers to bus dishes and ask for silverware, but nothing tells them before they arrive.</span></li>
+    </ol>
+    <p class="hand heard-label">what I heard</p>
+    <ul class="stickies two" aria-label="What customers told me">
+      <li class="sticky s1" style="--r:-1.2deg"><p>“The only times I check the website is to see the hours and whether or not it's open.”</p></li>
+      <li class="sticky s3" style="--r:1deg"><p>“I checked the menu to see if there were sugar-free options. I didn't find it…”</p></li>
+    </ul>
+    <p class="sticky-src">Intercept interviews, Sept 2026</p>
+
+    <div class="subblock">
+      <h3>Fix what happens before and during ordering</h3>
+      <ul class="methods">
+        <li><b>Journey map</b><span>7 stages from Discovery to Departure for a composite first-timer. Friction clustered at Pre-visit, Ordering, Waiting, and Departure.</span></li>
+        <li><b>Product vision board</b><span>Target groups (remote workers, students, families, friends), top needs (a space to work, a social space, gluten-free and dairy-free options), and business goals.</span></li>
+      </ul>
+      <ul class="prio" aria-label="What I chose to build">
+        <li><span class="prio-tag">Built</span><b>State the concept; keep the menu current</b><span>Hero names breakfast, lunch, coffee; one menu everywhere</span></li>
+        <li><span class="prio-tag">Built</span><b>Show hours and parking clearly</b><span>Persistent hours bar with Directions on every page</span></li>
+        <li><span class="prio-tag">Built</span><b>Post a wait estimate</b><span>Pickup estimate on the menu; progress tracker on confirmation</span></li>
+        <li><span class="prio-tag">Built</span><b>Read the order back before paying</b><span>Item changes shown in cart and checkout</span></li>
+        <li class="not"><span class="prio-tag">Not built</span><b>Live seating or wait status</b><span>Needs live data from the cafe</span></li>
+        <li class="out"><span class="prio-tag">Out of scope</span><b>Drink temperature and egg prep</b><span>Kitchen operations, not a website problem</span></li>
+      </ul>
+      <figure class="shot"><a class="shot-mat zoom" href="images/sb-journey.webp" target="_blank" rel="noopener" title="Open the full-size journey map"><img src="images/sb-journey.webp" alt="Current-state journey map for a composite campus-adjacent regular or first-timer, across seven stages from Discovery to Departure, with rows for scenario, experience, insights and opportunities." width="1800" height="874" loading="lazy"></a><figcaption>Current-state journey map, Discovery to Departure. Friction clustered at Pre-visit, Ordering, Waiting, and Departure.</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- MILE 4 -->
+  <section class="wrap mile" aria-labelledby="sb4">
+    <span class="sign mile-tab"><span class="tabtext">Mile 4 · The design</span></span>
+    <h2 id="sb4">Every key decision traces back to research</h2>
+
+    <article class="concept">
+      <h3><span class="num">Ideation</span>Eight homepage layouts, narrowed by peer critique</h3>
+      <p>I sketched 8 desktop homepage layouts on paper: hero-and-cards, a split image-and-text layout, a logo-centered page with four calls to action, and two experiments built on curved shapes and a timeline.</p>
+      <div class="recs">
+        <div>
+          <p class="hand">what 2 peers said</p>
+          <ul>
+            <li>A clear hero with cards underneath was easiest to follow</li>
+            <li>The main call to action needed to be more obvious</li>
+            <li>Image-led sections communicated faster than text-heavy ones</li>
+          </ul>
+        </div>
+        <div>
+          <p class="hand">what I carried forward</p>
+          <ul>
+            <li>Hero followed by card sections (the middle-left sketch)</li>
+            <li>A filled “Order online” primary button, outlined “View menu” secondary</li>
+            <li>Photo-led favorites</li>
+          </ul>
+        </div>
+      </div>
+      <figure class="shot">
+        <div class="shot-pair sb-sketches">
+          <span class="shot-mat"><img src="images/sb-sketches-1.webp" alt="A notebook page of six hand-drawn desktop homepage layouts, including hero-and-cards and split image-and-text layouts and a timeline experiment." width="1050" height="1400" loading="lazy"></span>
+          <span class="shot-mat"><img src="images/sb-sketches-2.webp" alt="Two more homepage sketches: a logo-centered page with four calls to action, and a layout built on curved shapes." width="1300" height="1001" loading="lazy"></span>
+        </div>
+        <figcaption>8 desktop homepage layouts. Peers found hero-plus-cards easiest to follow; the final homepage grew from the middle-left sketch on page 1.</figcaption>
+      </figure>
+    </article>
+
+    <article class="concept">
+      <h3><span class="num">Wireframes to high fidelity</span>From paper to a small design system</h3>
+      <ul class="methods">
+        <li><b>Lo-fi</b><span>Paper sketches of the desktop homepage.</span></li>
+        <li><b>Desktop v1 · Oct 13</b><span>High-fidelity screens for usability testing, built on Songbird's existing brand.</span></li>
+        <li><b>Desktop v2 · Oct 20</b><span>Interactions wired through checkout, alt text, tooltips, accessibility fixes.</span></li>
+        <li><b>Mobile mid-fi · Oct 26–27</b><span>Grayscale frames for the homepage, menu, item sheet, cart, checkout, and confirmation.</span></li>
+        <li><b>Mobile hi-fi · Oct 27</b><span>Color, type, and components applied from the design system.</span></li>
+      </ul>
+      <figure class="shot">
+        <div class="sb-devices">
+          <span class="shot-mat thin" style="--w:150px"><img src="images/sb-menu-midfi.webp" alt="Grayscale mid-fidelity mobile menu with category tabs, dietary filter chips, and item rows with + Add buttons." width="211" height="1024" loading="lazy"></span>
+          <svg class="sb-arrow" viewBox="0 0 80 40" aria-hidden="true"><path d="M4 22 C 24 10, 46 30, 70 18 M60 10 L71 18 L61 27" fill="none" stroke="#a64d2a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="shot-mat thin" style="--w:150px"><img src="images/sb-menu-hifi.webp" alt="The same mobile menu in high fidelity, with food photos, brown and cream styling, and dietary tags." width="208" height="1024" loading="lazy"></span>
+        </div>
+        <figcaption>Mobile menu, mid-fi to hi-fi: the same structure, with styles, photos, and dietary tags applied.</figcaption>
+      </figure>
+      <dl class="myrole-grid sb-system">
+        <div><dt>Type</dt><dd>IBM Plex Serif headings for warmth, Inter for body text and buttons. Separate desktop and mobile scales.</dd></div>
+        <div><dt>Color</dt><dd>Espresso brown, sage, and neutral ramps that echo the cafe's wood and plants. All text pairs pass WCAG AA (4.5:1).</dd></div>
+        <div><dt>Layout</dt><dd>Desktop: 1280 px, 12 columns, 24 px gutters, 80 px margins. Mobile: 499 px, 4 columns, 16 px gutters and margins.</dd></div>
+        <div><dt>Components</dt><dd>Buttons (Type × State × Size), input fields, nav bars, footers, product cards, and an order summary card.</dd></div>
+      </dl>
+    </article>
+
+    <article class="concept">
+      <h3><span class="num">User flow</span>Homepage to confirmed pickup in five steps</h3>
+      <ol class="flow-steps">
+        <li><b>Homepage</b><span>Order online</span></li>
+        <li><b>Menu</b><span>Filter, then + Add or open the item</span></li>
+        <li><b>Cart</b><span>ASAP or scheduled pickup, tip</span></li>
+        <li><b>Checkout</b><span>Contact, pickup, payment</span></li>
+        <li><b>Confirmation</b><span>Order number, pickup time</span></li>
+      </ol>
+      <figure class="shot"><a class="shot-mat zoom" href="images/sb-flow.webp" target="_blank" rel="noopener" title="Open the full-size user flow"><img src="images/sb-flow.webp" alt="User flow diagram from wanting breakfast for pickup to picking it up at the counter, with decision diamonds for diet filters, customizing an item, adding more items, cart contents, pickup time, payment method and required fields, plus error paths for an empty cart and missing fields." width="2200" height="538" loading="lazy"></a><figcaption>The full flow from FigJam: decisions (diamonds), system feedback (shaded boxes), the empty-cart and missing-field error paths, and back paths to the cart and menu.</figcaption></figure>
+    </article>
+
+    <article class="concept">
+      <h3><span class="num">Design rationale</span>What I heard, and what I designed</h3>
+      <table class="cs-table sb-why">
+        <caption class="sr-only">Each design decision, the research behind it, and the principle it applies</caption>
+        <thead><tr><th scope="col">Research showed</th><th scope="col">I designed</th><th scope="col">Principle</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Research showed">Hours changed; people get caught by the 3 PM close</td><td data-label="I designed">Hours and Directions bar on every page</td><td data-label="Principle">Visibility · consistency</td></tr>
+          <tr><td data-label="Research showed">Unclear if it's a coffee shop, cafe, or diner</td><td data-label="I designed">Hero headline names it: breakfast, lunch, coffee</td><td data-label="Principle">Visual hierarchy</td></tr>
+          <tr><td data-label="Research showed">A first-timer couldn't find sugar-free options</td><td data-label="I designed">Dietary filter chips plus a tag on every item</td><td data-label="Principle">Recognition over recall · filtering pattern</td></tr>
+          <tr><td data-label="Research showed">The wall menu confuses even staff</td><td data-label="I designed">Category tabs; photo cards with price and description</td><td data-label="Principle">Chunking · card pattern</td></tr>
+          <tr><td data-label="Research showed">Waits stretch at peak times</td><td data-label="I designed">Pickup estimate, ASAP preselected, progress tracker</td><td data-label="Principle">Visibility of system status · smart defaults</td></tr>
+          <tr><td data-label="Research showed">Reviews mention order mix-ups</td><td data-label="I designed">“Any changes?” row; changes shown in cart and checkout</td><td data-label="Principle">Error prevention · progressive disclosure</td></tr>
+          <tr><td data-label="Research showed">P1 loved adding straight from the menu</td><td data-label="I designed">+ Add on every item card</td><td data-label="Principle">Efficiency</td></tr>
+          <tr><td data-label="Research showed">Business goals: orders, gift cards, wholesale</td><td data-label="I designed">Catering, Gift Cards, Wholesale cards; “Forgot a pastry?”</td><td data-label="Principle">Business alignment</td></tr>
+          <tr><td data-label="Research showed">Checkout should feel quick and safe</td><td data-label="I designed">Guest checkout, numbered steps, Apple Pay and Google Pay first</td><td data-label="Principle">Reduced friction · platform conventions</td></tr>
+        </tbody>
+      </table>
+      <figure class="shot narrow"><span class="shot-mat"><img src="images/sb-dialog.webp" alt="Desktop item dialog for the Phoenix Breakfast Sandwich: a photo, a Vegetarian option tag, the $12.50 price, ingredients, an 'Any changes?' row, a quantity stepper, and an Add to order button showing $12.50." width="1024" height="690" loading="lazy"></span><figcaption>The item dialog: dietary tag, price, and ingredients first; customization behind one “Any changes?” row; the Add to order button shows the live total.</figcaption></figure>
+    </article>
+
+    <article class="concept">
+      <h3><span class="num">Responsive design</span>The same flow, rebuilt for a phone</h3>
+      <p>Lunch-rush and to-go customers are the most likely to order from a phone, so mobile got its own patterns instead of a shrunken desktop.</p>
+      <table class="cs-table sb-resp">
+        <caption class="sr-only">How each desktop pattern changed on mobile, and why</caption>
+        <thead><tr><th scope="col">Desktop</th><th scope="col">Mobile</th><th scope="col">Why</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Desktop">Full nav bar</td><td data-label="Mobile">Hamburger, logo, and cart with an item badge</td><td data-label="Why">Prioritization</td></tr>
+          <tr><td data-label="Desktop">Hero with two buttons</td><td data-label="Mobile">One Order online button that sticks to the bottom</td><td data-label="Why">One primary action in thumb reach</td></tr>
+          <tr><td data-label="Desktop">3-column menu grid</td><td data-label="Mobile">Single-column rows with a thumbnail and + Add</td><td data-label="Why">Scannable; matches food apps</td></tr>
+          <tr><td data-label="Desktop">Centered item dialog</td><td data-label="Mobile">Bottom sheet with a handle, ×, and sticky Add to order</td><td data-label="Why">Platform convention; thumb zone</td></tr>
+          <tr><td data-label="Desktop">Cart with a side summary</td><td data-label="Mobile">Stacked summary and a sticky “Checkout · $15.24” bar</td><td data-label="Why">Total always visible</td></tr>
+          <tr><td data-label="Desktop">Checkout with the full nav</td><td data-label="Mobile">Enclosed checkout: back arrow, lock icon, collapsible summary</td><td data-label="Why">Fewer exits</td></tr>
+        </tbody>
+      </table>
+      <div class="aside-card sb-drove">
+        <p class="hand">a decision testing drove</p>
+        <p>I removed View menu from the mobile sticky bar, leaving one action. In testing, Menu and Order Online competed for attention.</p>
+      </div>
+      <figure class="shot">
+        <div class="sb-devices">
+          <span class="shot-mat" style="--w:470px"><img src="images/sb-dialog.webp" alt="The Phoenix Breakfast Sandwich as a centered desktop dialog." width="1024" height="690" loading="lazy"></span>
+          <span class="shot-mat thin" style="--w:200px"><img src="images/sb-sheet.webp" alt="The same item as a mobile bottom sheet over the menu, with a handle, a close button, a photo, a Vegetarian tag, the price, ingredients, an 'Any changes?' row and a sticky 'Add to order · $12.50' button." width="474" height="1024" loading="lazy"></span>
+        </div>
+        <figcaption>Desktop dialog vs. mobile bottom sheet for the same item.</figcaption>
+      </figure>
+    </article>
+  </section>
+
+  <!-- MILE 5 -->
+  <section class="wrap mile" aria-labelledby="sb5">
+    <span class="sign mile-tab"><span class="tabtext">Mile 5 · Testing it</span></span>
+    <h2 id="sb5">My prototype vs. the live site</h2>
+    <dl class="cs-meta sb-plan">
+      <div><dt>Goal</dt><dd>Can people order ahead for pickup more easily than on the current site?</dd></div>
+      <div><dt>Method</dt><dd>Moderated think-aloud; same tasks on my prototype, then the live site</dd></div>
+      <div><dt>Participants</dt><dd>3</dd></div>
+      <div><dt>Measures</dt><dd>Task outcomes, 1–5 ease ratings, confidence</dd></div>
+    </dl>
+    <div class="split sb-scenario">
+      <div class="prose">
+        <p class="hand sb-label">scenario</p>
+        <p>A weekday morning, ordering breakfast ahead to pick up on the way to work or class.</p>
+      </div>
+      <div>
+        <p class="hand sb-label">tasks</p>
+        <ol class="sb-tasks">
+          <li>Add a Phoenix Breakfast Sandwich</li>
+          <li>Review the order and set ASAP pickup</li>
+          <li>Fill in your information and place the order</li>
+        </ol>
+      </div>
+    </div>
+    <table class="cs-table sb-results">
+      <caption class="sr-only">What happened on each task, on the live site and on my prototype</caption>
+      <thead><tr><th scope="col">Task</th><th scope="col">Live site</th><th scope="col">My prototype</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Task">Find and add the sandwich</td><td data-label="Live site">Not orderable under its menu name. P2 gave up; P3 settled for a generic sandwich.</td><td data-label="My prototype">All 3 chose Order Online first. P2 and P3 found the item and + Add right away.</td></tr>
+        <tr><td data-label="Task">Set ASAP pickup</td><td data-label="Live site">Greyed out for all 3 because testing ran while the cafe was closed.</td><td data-label="My prototype">ASAP was preselected, and P2 noticed it right away.</td></tr>
+        <tr><td data-label="Task">Check out</td><td data-label="Live site">Blocked by the scheduling issue.</td><td data-label="My prototype">Not wired yet, so checkout went untested in round 1.</td></tr>
+      </tbody>
+    </table>
+    <p class="hand heard-label">what I heard</p>
+    <ul class="stickies two" aria-label="What participants said">
+      <li class="sticky s2" style="--r:-1deg"><p>“I love those pages where I can add right from the menu without having to click into the picture.”</p><span class="sticky-cite">P1</span></li>
+      <li class="sticky s1" style="--r:1.2deg"><p>“Are other buttons supposed to be working?”</p><span class="sticky-cite">P3, after a button didn't respond</span></li>
+    </ul>
+    <div class="split even sb-honest">
+      <figure class="shot sb-affinity-fig"><a class="shot-mat zoom" href="images/sb-affinity.webp" target="_blank" rel="noopener" title="Open the full-size affinity map"><img src="images/sb-affinity.webp" alt="Affinity map of session notes on sticky notes. My prototype's clusters: getting to order, adding items, pickup time, checkout dead end, ratings and uncertainty. The live site's clusters: finding online ordering, finding the Phoenix sandwich, adding items, ratings and habits, and time restrictions." width="1800" height="805" loading="lazy"></a><figcaption>Affinity map from the sessions: my prototype's clusters (left) beside the live site's (right).</figcaption></figure>
+      <div class="aside-card honest">
+        <p class="hand">reading the results honestly</p>
+        <ul class="sb-caveats">
+          <li>I weighted behavior over ratings: P1 gave a 5 to a task she didn't finish.</li>
+          <li>The ASAP comparison isn't a fair win: the cafe was closed during testing, so the live site only allowed scheduled pickup.</li>
+          <li>Order effects: everyone saw my prototype first. Round 2 will alternate which site goes first.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap mile" aria-labelledby="sbIter" data-toc="After testing">
+    <h2 id="sbIter">What changed after testing</h2>
+    <div class="prose"><p>On Oct 20, I turned the test findings and an accessibility review into specific fixes, then carried them into the mobile design.</p></div>
+    <table class="cs-table sb-iter">
+      <caption class="sr-only">Each issue from testing or the accessibility review, the fix, and the guideline it addresses</caption>
+      <thead><tr><th scope="col">What I found</th><th scope="col">What I changed</th><th scope="col">Guideline</th></tr></thead>
+      <tbody>
+        <tr><td data-label="What I found">P3 couldn't tell whether her item was added</td><td data-label="What I changed">A full-width “Added” banner and a cart badge</td><td data-label="Guideline">WCAG 4.1.3 Status messages</td></tr>
+        <tr><td data-label="What I found">P3 asked if other buttons worked</td><td data-label="What I changed">+ Add buttons invert color on hover</td><td data-label="Guideline">Affordance · feedback</td></tr>
+        <tr><td data-label="What I found">Checkout didn't respond with an empty cart</td><td data-label="What I changed">Inline error: “Add something to your cart!”</td><td data-label="Guideline">WCAG 3.3.1 Error identification</td></tr>
+        <tr><td data-label="What I found">Totals didn't match across screens</td><td data-label="What I changed">Count, tax, tip, and total match everywhere</td><td data-label="Guideline">Consistency</td></tr>
+        <tr><td data-label="What I found">People re-entered the same details</td><td data-label="What I changed">Pickup details carry over; autofill offered</td><td data-label="Guideline">WCAG 3.3.7 Redundant entry</td></tr>
+        <tr><td data-label="What I found">Photos had no text alternative</td><td data-label="What I changed">Alt text on every meaningful image</td><td data-label="Guideline">WCAG 1.1.1 Non-text content</td></tr>
+        <tr><td data-label="What I found">“GF” abbreviation and a misspelled tag</td><td data-label="What I changed">“Gluten-free” spelled out; tag fixed</td><td data-label="Guideline">WCAG 2.4.6 · 3.1.4</td></tr>
+        <tr><td data-label="What I found">The nav cart icon was small</td><td data-label="What I changed">Enlarged cart target</td><td data-label="Guideline">WCAG 2.5.8 Target size</td></tr>
+        <tr><td data-label="What I found">Input borders were 2.3:1; focus was 1.5:1</td><td data-label="What I changed">Sage border (3.7:1); 2 px brown focus (8.6:1)</td><td data-label="Guideline">WCAG 1.4.11 · 2.4.7</td></tr>
+      </tbody>
+    </table>
+    <figure class="shot">
+      <div class="sb-devices">
+        <span class="shot-mat" style="--w:320px"><img src="images/sb-added.webp" alt="Desktop menu after adding an item: a full-width dark banner reading 'Phoenix Breakfast Sandwich Added' above the menu grid, and a badge on the cart icon." width="534" height="1024" loading="lazy"></span>
+        <span class="shot-mat" style="--w:320px"><img src="images/sb-checkout.webp" alt="Desktop checkout titled 'Almost yours.' with numbered Contact, Pickup details and Payment sections, Apple Pay and Google Pay buttons, and an order summary totaling $15.24 that matches the Place order button." width="521" height="1024" loading="lazy"></span>
+      </div>
+      <figcaption>After testing: the Added banner and cart badge (left) and a checkout with matching totals (right).</figcaption>
+    </figure>
+  </section>
+
+  <section class="wrap mile" aria-labelledby="sbHand" data-toc="Handoff">
+    <h2 id="sbHand">Clickable on both platforms, documented in Dev Mode</h2>
+    <ul class="markers">
+      <li><span><b>Two prototype flows:</b> Desktop and Mobile “Order Ahead for Pickup,” both from the Homepage to Order Confirmation.</span></li>
+      <li><span><b>Dev Mode handoff page:</b> a read-me, about 250 annotations (interactions, accessibility, alt text, content rules), and marked exports.</span></li>
+      <li><span><b>Clean file:</b> named layers, color, text, and shadow styles, and documented components.</span></li>
+    </ul>
+  </section>
+
+  <section class="wrap mile" aria-labelledby="sbOut" data-toc="Results">
+    <h2 id="sbOut">From “users liked it” to evidence</h2>
+    <div class="prose"><p>On my prototype, all 3 participants went straight to Order Online and 2 found the sandwich right away; on the live site, 2 of 3 couldn't find it at all. Testing also showed that the online ordering page on Toast lists items under different names than the cafe's own menu.</p></div>
+    <div class="recs">
+      <div>
+        <p class="hand">next steps</p>
+        <ul>
+          <li>Run round 2 during open hours, with checkout wired end to end</li>
+          <li>Design a closed-hours state that offers the next pickup time</li>
+          <li>Label time-limited items, like breakfast-only dishes</li>
+        </ul>
+      </div>
+      <div>
+        <p class="hand">what I'd do differently</p>
+        <ul>
+          <li>Click through every task exactly as written before the first session</li>
+          <li>Ask why behind every rating</li>
+          <li>Keep benchmarking against the live site</li>
+        </ul>
+      </div>
+    </div>
+    <p class="still sb-ai">AI use: I used Claude (Anthropic) to help write interview questions, organize reviews and notes, give design feedback, build the mobile item-sheet wireframe, create the user flow diagram, and draft this write-up.</p>
+  </section>
+
+  <nav class="wrap cs-next" aria-label="Next">
+    <a class="back" href="./#work">← All entrances</a>
+    <a class="next-sign sign" href="lendmate.html"><span class="tabtext">Next entrance</span><span class="big">LendMate Alum →</span></a>
+  </nav>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./"><img class="seal" src="images/seal.png" alt="" width="256" height="256"><span>Tina Wu Chao</span></a>
+    <span>© 2026 · Watercolor versions of my own photos</span>
+  </div>
+</footer>
+
+<script src="js/site.js"></script>
+</body>
+</html>
