@@ -822,36 +822,15 @@ img.seal { display: block; object-fit: contain; }
 }
 @media (max-width: 520px) { .prio { grid-template-columns: 1fr; } }
 
-/* ---------- About: people, languages, and a stamped passport page ---------- */
+/* ---------- About: people, and the wedding bouquets ---------- */
 .ab-people { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
 .ab-people-text { min-width: 0; }
 .ab-people-text > p:not(.hand) { max-width: 54ch; font-size: var(--t-l); line-height: 1.6; margin: 0 0 1.1rem; }
 .ab-people-text > p:last-child { margin-bottom: 0; }
 .people-kicker { margin: 0 0 .3rem; color: var(--rust); font-size: 1.9rem; transform: rotate(-1.5deg); transform-origin: left; }
-.passport { position: relative; justify-self: center; width: min(100%, 440px); padding: 16px 22px 26px; border-radius: 6px 14px 14px 6px; transform: rotate(1.6deg);
-  background:
-    repeating-radial-gradient(circle at 78% 22%, rgba(59, 103, 109, .07) 0 1px, transparent 1.5px 8px),
-    repeating-linear-gradient(115deg, rgba(166, 77, 42, .04) 0 1px, transparent 1px 11px),
-    #f4efe2;
-  box-shadow: inset 16px 0 18px -16px rgba(47, 53, 58, .35), 0 2px 3px rgba(30, 36, 42, .12), 0 16px 30px rgba(30, 36, 42, .2); }
-.passport::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: url("../images/wash-teal.webp") center / 140% 140% no-repeat; opacity: .18; pointer-events: none; }
-.pp-head { position: relative; display: flex; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1.5px dashed rgba(47, 53, 58, .3);
-  font-weight: 800; font-size: var(--t-xs); letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft); }
-.pp-page { position: relative; display: grid; grid-template-columns: 1fr 1fr; align-items: center; justify-items: center; gap: 10px 8px; padding-top: 22px; }
-.stamp { --c: #8a3a1c; display: inline-grid; justify-items: center; align-content: center; gap: 3px; padding: 12px 16px 13px; color: var(--c); text-align: center;
-  border: 3px solid var(--c); border-radius: 8px; box-shadow: inset 0 0 0 3px #f4efe2, inset 0 0 0 4.5px var(--c);
-  transform: rotate(var(--r, 0deg)); mix-blend-mode: multiply; }
-.stamp b { font-family: var(--f-display); font-weight: 400; font-size: 2rem; line-height: 1; letter-spacing: .02em; }
-.stamp b[lang="zh"] { font-family: "Ma Shan Zheng", "Kaiti SC", "STKaiti", "KaiTi", "BiauKai", "Noto Serif CJK SC", "Noto Serif CJK TC", serif; font-size: 2.5rem; letter-spacing: .06em; }
-.stamp small { display: inline-flex; align-items: center; gap: 5px; font-weight: 800; font-size: .75rem; letter-spacing: .16em; text-transform: uppercase; line-height: 1.2; }
-.stamp small svg { width: 15px; height: 15px; transform: rotate(45deg); }
-.stamp.round { width: 158px; height: 158px; border-radius: 50%; padding: 14px; }
-.stamp.round small { max-width: 78%; justify-content: center; letter-spacing: .1em; }
-.stamp.teal { --c: #2c565c; }
-.stamp.plum { --c: #5e3a58; grid-column: 1 / -1; border-style: dashed; padding-inline: 26px; }
-/* the wedding bouquets: a print taped onto the corner of the passport */
+/* the wedding bouquets: a taped print beside the sentence about them */
 .people-side { display: grid; justify-items: center; min-width: 0; }
-.wed-photo { position: relative; z-index: 1; width: min(76%, 290px); margin: -26px 0 0 18%; padding: 10px 10px 12px; background: #fdfbf6; transform: rotate(-2.5deg);
+.wed-photo { position: relative; z-index: 1; width: min(88%, 340px); margin: 0; padding: 10px 10px 12px; background: #fdfbf6; transform: rotate(-2.5deg);
   box-shadow: 0 1px 2px rgba(30, 36, 42, .16), 0 14px 26px rgba(30, 36, 42, .22); }
 .wed-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
 .wed-photo figcaption { margin-top: 9px; font-family: var(--f-hand); font-size: 1.4rem; line-height: 1.05; text-align: center; color: var(--ink-soft); text-wrap: balance; }
@@ -859,17 +838,7 @@ img.seal { display: block; object-fit: contain; }
   background: linear-gradient(100deg, rgba(206, 199, 184, .82), rgba(246, 243, 236, .86) 42%, rgba(222, 216, 202, .78) 60%, rgba(204, 197, 182, .82));
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .6), 0 1px 4px rgba(30, 36, 42, .3);
   clip-path: polygon(4% 0, 96% 0, 100% 18%, 96% 38%, 100% 58%, 96% 78%, 100% 100%, 4% 100%, 0 80%, 4% 60%, 0 40%, 4% 20%); }
-@media (max-width: 860px) { .ab-people { grid-template-columns: 1fr; } .passport { margin-top: 8px; } }
-@media (max-width: 860px) { .wed-photo { margin-left: 12%; } }
-@media (max-width: 440px) {
-  .passport { padding-inline: 16px; }
-  .stamp { padding-inline: 12px; }
-  .stamp b { font-size: 1.75rem; }
-  .stamp b[lang="zh"] { font-size: 2.2rem; }
-  .stamp.round { width: 142px; height: 142px; padding: 12px; }
-  .stamp.round small { font-size: .68rem; }
-}
-@media (max-width: 350px) { .pp-page { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .ab-people { grid-template-columns: 1fr; } .wed-photo { margin-top: 8px; } }
 
 /* ---------- About: gift tags, each hanging from its own string ---------- */
 .ab-gifts { padding-top: 0; }
