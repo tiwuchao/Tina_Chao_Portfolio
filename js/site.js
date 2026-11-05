@@ -198,8 +198,8 @@ document.documentElement.lang = 'en';
   const LIST_ICON = '<svg viewBox="0 0 26 18" aria-hidden="true"><path d="M10 3h13M10 9h13M10 15h13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="4.5" cy="3" r="1.9" fill="currentColor"/><circle cx="4.5" cy="9" r="1.9" fill="currentColor"/><circle cx="4.5" cy="15" r="1.9" fill="currentColor"/></svg>';
   const slug = t => t.toLowerCase().replace(/&/g, 'and').replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const tocList = [];
-  if (view && !isHome) {
-    view.querySelectorAll(':scope > section.mile, :scope > [data-toc]').forEach(el => {
+  if (view) {
+    view.querySelectorAll(isHome ? '[data-toc]' : ':scope > section.mile, :scope > [data-toc]').forEach(el => {
       let label = el.dataset.toc || '', n = '';
       if (!label) {
         const tab = el.querySelector(':scope > .mile-tab .tabtext'), m = tab && tab.textContent.trim().match(/^Mile\s+(\d+)\s*·\s*(.+)$/);
