@@ -1094,3 +1094,11 @@ img.seal { display: block; object-fit: contain; }
 .shot-pair.stack { grid-template-columns: 1fr; gap: clamp(28px, 4vw, 44px); }
 .persona-fig + .persona-fig { margin-top: clamp(28px, 4vw, 44px); }
 
+
+/* rumble strips: grey watercolor bars in the gap between case studies */
+.entry + .entry::before {
+  content: ""; position: absolute; left: 50%; top: calc(clamp(72px, 10vw, 120px) / -2);
+  width: min(100%, 760px); height: 40px; transform: translate(-50%, -50%);
+  background: url("../images/rumble.webp") center / 760px 40px no-repeat; pointer-events: none;
+}
+.entry:nth-child(odd) + .entry::before { transform: translate(-50%, -50%) scaleX(-1); }
