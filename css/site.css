@@ -1098,8 +1098,7 @@ img.seal { display: block; object-fit: contain; }
   .toc-rail::before { content: ""; position: absolute; left: 50%; top: 10px; bottom: 10px; border-left: 2px dashed rgba(226, 150, 58, .85); transform: translateX(-1px); }
   .toc-rail > span { position: relative; display: flex; align-items: center; height: 9px; }
   .toc-rail b { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 13px; line-height: 1; font-weight: 400; white-space: nowrap; }
-  .toc-rail > span:not(.cur) b { display: none; }   /* narrow margins: only the section you're in shows its emoji */
-  .toc-rail .cur b { padding: 3px 5px; border-radius: 999px; background: #fbf8f1; box-shadow: 0 1px 2px rgba(30, 36, 42, .2); }
+  .toc-rail b { display: none; }   /* phones and tablets: circles only, so nothing covers the text */
   .toc-rail i { position: relative; width: 9px; height: 9px; border-radius: 50%; background: #fbf8f1;
     box-shadow: inset 0 0 0 2px var(--sign), 0 0 0 1.5px #fbf8f1; transition: background-color .2s ease, box-shadow .2s ease; }
   .toc-rail .done i { background: var(--sign); }
@@ -1107,8 +1106,7 @@ img.seal { display: block; object-fit: contain; }
 }
 /* margins wide enough (1228px+): every circle shows its emoji */
 @media (min-width: 1228px) and (max-width: 1299.98px) {
-  .toc-rail > span:not(.cur) b { display: block; }
-  .toc-rail .cur b { padding: 0; background: none; box-shadow: none; }
+  .toc-rail b { display: block; }
 }
 @media (prefers-reduced-motion: reduce) { .toc-panel, .toc-head span, .toc-lb, .toc-rail i { transition: none !important; } }
 @media print { .toc { display: none; } }
