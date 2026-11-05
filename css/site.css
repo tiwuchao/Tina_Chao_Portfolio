@@ -212,15 +212,24 @@ a.entry-art:focus-visible { outline: 3px solid var(--rust); outline-offset: 10px
 .big-sign li span { grid-column: 1; font-weight: 400; font-size: var(--t-s); opacity: .92; }
 .big-sign li em { grid-row: 1 / span 2; grid-column: 2; font-style: normal; font-weight: 800; font-size: var(--t-xs); letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; align-self: center; border: 2px solid rgba(251,244,230,.75); border-radius: 6px; padding: 3px 8px; }
 /* the next entrances: an orange work-zone sign */
-.sign.big-sign.construction { background: linear-gradient(rgba(255, 200, 128, .5), rgba(255, 200, 128, .5)), #f0902c url("../images/fill-orange.jpg") center / 420px;
-  color: #1c1a18; box-shadow: none; }
+.sign.big-sign.construction { width: 100%; background: linear-gradient(rgba(110, 36, 6, .55), rgba(110, 36, 6, .55)), #c4581f url("../images/fill-orange.jpg") center / 420px;
+  color: #fff; box-shadow: none; }   /* dark orange wash: white text stays above 5:1 even on the lightest paint */
 .construction .barricade { display: block; height: 14px; margin: 2px 0 16px; border-radius: 3px;
-  background: repeating-linear-gradient(-45deg, #1c1a18 0 13px, transparent 13px 26px); opacity: .9; }
+  background: repeating-linear-gradient(-45deg, #fbf4e6 0 13px, transparent 13px 26px); opacity: .9; }
 .construction h3 { font-size: clamp(1.05rem, 2.2vw, 1.3rem); letter-spacing: .18em; }
-.construction li { border-top-color: rgba(28, 26, 24, .35); }
+.construction li { border-top-color: rgba(255, 255, 255, .4); }
 .construction li span { opacity: 1; }
-.construction li em { border-color: #1c1a18; }
-.posts { display: flex; justify-content: space-between; width: min(70%, 520px); height: 46px; }
+.construction li em { border-color: #fff; }
+/* the work zone around it: hard hat on the sign, cones and a barricade at its feet */
+.zone { position: relative; width: min(100%, 860px); display: grid; justify-items: center; }
+.zone img { position: absolute; z-index: 2; height: auto; pointer-events: none; }
+.wz-hat { width: clamp(78px, 11vw, 112px); top: 0; right: 7%; transform: translateY(-62%) rotate(9deg); }
+.wz-cone { bottom: 0; width: clamp(40px, 5.4vw, 54px); }
+.wz-cone-1 { left: 3%; }
+.wz-cone-2 { left: 10%; width: clamp(34px, 4.4vw, 44px); transform: scaleX(-1); }
+.wz-barricade { right: 1%; bottom: 0; width: clamp(92px, 12vw, 124px); }
+@media (max-width: 520px) { .wz-cone-2 { display: none; } .wz-cone-1 { left: 1%; } .wz-barricade { right: 0; } }
+.posts { display: flex; justify-content: space-between; width: min(70%, 520px); height: 72px; }
 .posts::before, .posts::after { content: ""; width: 9px; height: 100%; background: linear-gradient(90deg, #7d8389, #a5aab0 45%, #6b7177); border-radius: 0 0 3px 3px; opacity: .8; }
 @media (max-width: 520px) { .big-sign li { grid-template-columns: 1fr; } .big-sign li em { grid-row: auto; grid-column: 1; justify-self: start; margin-top: 4px; } }
 
@@ -708,7 +717,7 @@ img.seal { display: block; object-fit: contain; }
 .entry.wide-art { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); }
 .entry.wide-art:nth-child(odd) { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); }
 #fourth-soil .cs-cover { max-width: 1080px; }
-@media (max-width: 820px) { .entry.wide-art { grid-template-columns: 1fr; } }
+@media (max-width: 820px) { .entry.wide-art, .entry.wide-art:nth-child(odd) { grid-template-columns: 1fr; } }
 
 /* ---------- "See my work" highway sign ---------- */
 .hero .actions { align-items: center; }
@@ -719,6 +728,14 @@ img.seal { display: block; object-fit: contain; }
 .hero-sign .sign { padding: 11px 20px 13px; }
 .hero-sign .big { font-size: clamp(1.15rem, 2vw, 1.35rem); letter-spacing: .04em; }
 .hero-sign .small { margin-top: 2px; font-weight: 600; }
+/* an exit sign, so it reads differently from the case-study entrance signs */
+.hero-sign.exit { flex-direction: column; align-items: flex-end; }
+.exit-tab { position: relative; z-index: 1; margin: 0 16px -5px 0; padding: 4px 14px 8px; border-radius: 7px 7px 0 0;
+  background: #e9b24d url("../images/sign-yellow.jpg") center / cover; color: #1f2326; font-weight: 800; font-size: var(--t-xs);
+  letter-spacing: .2em; text-transform: uppercase; line-height: 1; box-shadow: inset 0 0 0 2px #1f2326; }
+.hero-sign.exit .sign { flex-direction: row; align-items: center; gap: 14px; padding-right: 16px; }
+.exit-text { display: flex; flex-direction: column; gap: 2px; }
+.exit-arrow { flex: none; width: 26px; height: 34px; }
 @media (prefers-reduced-motion: reduce) { .hero-sign { transition: none; } .hero-sign:hover { transform: rotate(-1.2deg); } }
 
 /* ---------- torn road map on the painting (links to the process) ---------- */
@@ -1038,7 +1055,7 @@ img.seal { display: block; object-fit: contain; }
 .toc-head svg, .toc-toggle svg { flex: none; width: 26px; height: 18px; }
 .toc-list { position: relative; list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; }
 .toc-list::before { content: ""; position: absolute; left: 12px; top: 14px; bottom: 14px; border-left: 2.5px dashed rgba(226, 150, 58, .85); }
-.toc-list a { display: grid; grid-template-columns: 26px 1fr; align-items: center; gap: 10px; padding: 5px 4px 5px 0; border-radius: 6px;
+.toc-list a { display: grid; grid-template-columns: 26px 20px 1fr; align-items: center; gap: 8px; padding: 5px 4px 5px 0; border-radius: 6px;
   color: var(--ink-soft); font-size: .875rem; font-weight: 600; line-height: 1.25; text-decoration: none; }
 .toc-mk { position: relative; display: grid; place-items: center; width: 26px; height: 22px; border-radius: 4px; background: var(--sign); color: #fff;
   font-size: .75rem; font-weight: 800; box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, .8), 0 0 0 2.5px #fbf8f1; }
@@ -1057,7 +1074,9 @@ img.seal { display: block; object-fit: contain; }
 }
 @media (min-width: 1300px) and (max-width: 1599.98px) {
   .toc { left: 10px; top: calc(50% + 34px); transform: translateY(-50%); }
-  .toc-panel { width: 46px; max-height: calc(100vh - 150px); overflow: hidden; padding: 14px 10px 10px; transition: width .28s cubic-bezier(.2, .7, .2, 1); }
+  .toc { left: 6px; }
+  .toc-panel { width: 66px; max-height: calc(100vh - 150px); overflow: hidden; padding: 14px 8px 10px; transition: width .28s cubic-bezier(.2, .7, .2, 1); }
+  .toc-list a { gap: 6px; }
   .toc-head span, .toc-lb { opacity: 0; white-space: nowrap; transition: opacity .15s ease; }
   .toc:hover .toc-panel, .toc:focus-within .toc-panel { width: 240px; overflow-y: auto; }
   .toc:hover .toc-head span, .toc:hover .toc-lb, .toc:focus-within .toc-head span, .toc:focus-within .toc-lb { opacity: 1; transition-delay: .1s; }
@@ -1071,7 +1090,27 @@ img.seal { display: block; object-fit: contain; }
   .toc-panel { position: absolute; left: 0; bottom: calc(100% + 10px); width: min(300px, calc(100vw - 24px)); max-height: min(70vh, 540px); overflow: auto; padding: 18px 14px 12px 12px; }
   .toc-list a { padding-block: 7px; font-size: .9375rem; }
 }
-@media (prefers-reduced-motion: reduce) { .toc-panel, .toc-head span, .toc-lb { transition: none !important; } }
+/* a trail of circles in the left margin when the list is folded into the button: shows how far down the page you are */
+.toc-rail { display: none; }
+@media (max-width: 1299.98px) {
+  .toc-rail { position: fixed; left: calc(2px + env(safe-area-inset-left, 0px)); top: 50%; transform: translateY(-50%);
+    display: grid; justify-items: center; gap: 10px; padding: 4px 2px; cursor: pointer; }
+  .toc-rail::before { content: ""; position: absolute; left: 50%; top: 10px; bottom: 10px; border-left: 2px dashed rgba(226, 150, 58, .85); transform: translateX(-1px); }
+  .toc-rail > span { position: relative; display: flex; align-items: center; height: 9px; }
+  .toc-rail b { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 13px; line-height: 1; font-weight: 400; white-space: nowrap; }
+  .toc-rail > span:not(.cur) b { display: none; }   /* narrow margins: only the section you're in shows its emoji */
+  .toc-rail .cur b { padding: 3px 5px; border-radius: 999px; background: #fbf8f1; box-shadow: 0 1px 2px rgba(30, 36, 42, .2); }
+  .toc-rail i { position: relative; width: 9px; height: 9px; border-radius: 50%; background: #fbf8f1;
+    box-shadow: inset 0 0 0 2px var(--sign), 0 0 0 1.5px #fbf8f1; transition: background-color .2s ease, box-shadow .2s ease; }
+  .toc-rail .done i { background: var(--sign); }
+  .toc-rail .cur i { background: var(--rust); box-shadow: inset 0 0 0 2px var(--rust), 0 0 0 1.5px #fbf8f1, 0 0 0 3px rgba(166, 77, 42, .35); }
+}
+/* margins wide enough (1228px+): every circle shows its emoji */
+@media (min-width: 1228px) and (max-width: 1299.98px) {
+  .toc-rail > span:not(.cur) b { display: block; }
+  .toc-rail .cur b { padding: 0; background: none; box-shadow: none; }
+}
+@media (prefers-reduced-motion: reduce) { .toc-panel, .toc-head span, .toc-lb, .toc-rail i { transition: none !important; } }
 @media print { .toc { display: none; } }
 .gift-tag.gt-wash-gold { --wash: url("../images/wash-gold.webp"); }
 .gift-tag.gt-wash-orange { --wash: url("../images/wash-orange.webp"); }
