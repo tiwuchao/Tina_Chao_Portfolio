@@ -1097,8 +1097,8 @@ img.seal { display: block; object-fit: contain; }
 
 /* rumble strips: grey watercolor bars in the gap between case studies */
 .entry + .entry::before {
-  content: ""; position: absolute; left: 50%; top: calc(clamp(72px, 10vw, 120px) / -2);
-  width: min(100%, 760px); height: 40px; transform: translate(-50%, -50%);
-  background: url("../images/rumble.webp") center / 760px 40px no-repeat; pointer-events: none;
+  content: ""; position: absolute; left: 0; right: 0; top: calc(clamp(72px, 10vw, 120px) / -2);
+  height: 40px; transform: translateY(-50%);
+  background: url("../images/rumble.webp") left center / 760px 40px; background-repeat: round no-repeat; pointer-events: none;
 }
-.entry:nth-child(odd) + .entry::before { transform: translate(-50%, -50%) scaleX(-1); }
+.entry:nth-child(odd) + .entry::before { transform: translateY(-50%) scaleX(-1); }
