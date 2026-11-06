@@ -696,7 +696,7 @@ img.seal { display: block; object-fit: contain; }
   -webkit-backdrop-filter: blur(7px); backdrop-filter: blur(7px);
   -webkit-mask: url("../images/rip.png") center / 100% 100% no-repeat; mask: url("../images/rip.png") center / 100% 100% no-repeat; }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .hero-card-paper, .road-paper { background: rgba(246, 242, 234, .9); } }
-@media (max-width: 640px) { .hero-card { display: block; transform: rotate(-.8deg); } }
+@media (max-width: 640px) { .hero-card { display: block; transform: rotate(-.8deg); margin-left: 10px; } }
 .ev-story .ev-last { color: #f7d29a; }
 .trk-art.wash-art, .vinyl-label.painted, .disc-label.painted { background: linear-gradient(rgba(10, 18, 28, .7), rgba(10, 18, 28, .7)), var(--teal) url("../images/fill-ink.jpg") center / 300%; }
 .trk-art.wash-art { place-items: start; text-align: left; padding: 9px 10px; font-size: .9rem; line-height: 1.02; }

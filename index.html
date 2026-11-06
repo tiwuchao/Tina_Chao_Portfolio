@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Nanum+Pen+Script&family=Overpass:ital,wght@0,400;0,600;0,800;1,400&display=swap">
-<link rel="stylesheet" href="css/site.css?v=20261106b">
+<link rel="stylesheet" href="css/site.css?v=20261106c">
 <style>.tt-sticker { filter: url(#sticker-cut); }</style>
 </head>
 <body>
@@ -63,8 +63,8 @@
   <ul class="nav-links" id="navLinks">
     <li><a href="#work">Work</a></li>
     <li><a href="#process">Process</a></li>
-    <li><a href="#studio">Studio</a></li>
     <li><a href="about.html">About</a></li>
+    <li><a href="#studio">Studio</a></li>
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="Tina-Chao-Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a></li>
     <li><a class="hello" href="#contact">Say hello</a></li>
@@ -82,7 +82,7 @@
         <div class="hero-card-paper">
           <p class="eyebrow">UX researcher &amp; designer · University of Michigan</p>
           <h1><span>Tina Chao</span></h1>
-          <p class="lede">I listen past the noise until I find the real problem, the one that finally makes someone feel seen. When I'm not researching, I write and record songs.</p>
+          <p class="lede">I find out what people actually need, then turn it into recommendations a business can act on. When I'm not researching, I write and record songs.</p>
           <p class="hero-status">Looking for entry-level UX research roles · graduating May 2027</p>
           <div class="actions">
             <a class="hero-sign exit" href="#work">
@@ -213,6 +213,12 @@
             <strong>Songbird Cafe</strong>
             <span class="more-sub">Ordering ahead without the guesswork</span>
           </a></li>
+          <li><a class="more-tile" href="gallery.html#gal-design">
+            <img src="images/gallery/lh-sweatshirt.webp" alt="" width="500" height="500" loading="lazy">
+            <span class="more-meta">Brand &amp; visual work · 2026</span>
+            <strong>Lighthouse merch and more</strong>
+            <span class="more-sub">A logo, a sweatshirt, posters and brochures, in my Gallery</span>
+          </a></li>
         </ul>
       </section>
 
@@ -310,6 +316,68 @@
     </div>
   </section>
 
+
+  <!-- ABOUT -->
+  <section class="section about" id="about" data-toc="About me">
+    <div class="cityscape">
+      <img class="skyline" src="images/skyline.webp" alt="Watercolor city skyline at dusk with a few lit windows under an orange band of sky." loading="lazy">
+    </div>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">About</p>
+        <h2 class="painted-type">The short version</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>Hi, I'm Tina, a senior at the University of Michigan School of Information studying UX, with minors in Entrepreneurship and Music. Right now I'm interning at in2being, where I research how clients understand complex medtech work.</p>
+          <p>Most of my work lives in the gap between people: farmers and customers who can't visit, founders and the people they hope to serve, students and the alumni who might help them.</p>
+          <p>Away from a screen, I write songs, sing, and take photos of cute architecture, quiet nature and anything with a vintage feel.</p>
+          <ul class="tags"><li>Faith-driven</li><li>Community-first</li></ul>
+          <div class="sig"><img class="seal" src="images/seal.png" alt="" width="256" height="256"><span class="hand">Tina</span></div>
+        </div>
+        <div class="about-side">
+        <figure class="print" style="--rot:2deg">
+          <img src="images/tina-ferris.webp" alt="AI watercolor of Tina smiling in a selfie high above an amusement park at sunset, with roller coasters behind her." loading="lazy" width="964" height="778">
+          <figcaption>up high at golden hour</figcaption>
+        </figure>
+        <aside class="strengths more-card" aria-label="The longer version">
+          <h3>The longer version</h3>
+          <p class="sub">My About page goes further</p>
+          <ul>
+            <li>Who I am off the clock</li>
+            <li>Songs that started with listening</li>
+            <li>My process, mile by mile</li>
+            <li>My CliftonStrengths and what they look like</li>
+            <li>The story behind my song "Evergreen"</li>
+            <li>My music and the instruments I play</li>
+            <li>Photographs I've taken</li>
+          </ul>
+          <a class="btn" href="about.html">Read my About page</a>
+        </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact" data-toc="Say hello">
+    <div class="wrap">
+      <div class="merge" aria-hidden="true">
+        <div class="diamond"></div>
+        <svg viewBox="0 0 72 72"><path d="M44 66 V12 M35 21 L44 11 L53 21 M24 66 C24 52 44 48 44 36" fill="none" stroke="#2f353a" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h2 class="painted-type orange">Let's merge</h2>
+      <p>Thanks for stopping by! I'd love to hear about UX research roles, a project you're stuck on, or a song you can't get out of your head.</p>
+      <div class="email-row">
+        <span class="email" id="emailText">tiwuchao@umich.edu</span>
+        <button class="copy" id="copyEmail" type="button">Copy email</button>
+      </div>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/tina-wu-chao/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="Tina-Chao-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+      </div>
+    </div>
+  </section>
   <!-- STUDIO -->
   <section class="studio-panel" id="studio" data-toc="Studio">
     <div class="lanterns" aria-hidden="true">
@@ -380,68 +448,6 @@
           <img src="images/tina-keys.webp" alt="AI watercolor of Tina singing into a microphone while playing a keyboard." loading="lazy" width="936" height="838">
           <figcaption>singing at the keys</figcaption>
         </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section about" id="about" data-toc="About me">
-    <div class="cityscape">
-      <img class="skyline" src="images/skyline.webp" alt="Watercolor city skyline at dusk with a few lit windows under an orange band of sky." loading="lazy">
-    </div>
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">About</p>
-        <h2 class="painted-type">The short version</h2>
-      </div>
-      <div class="about-grid">
-        <div class="about-copy">
-          <p>Hi, I'm Tina, a senior at the University of Michigan School of Information studying UX, with minors in Entrepreneurship and Music. Right now I'm interning at in2being, where I research how clients understand complex medtech work.</p>
-          <p>Most of my work lives in the gap between people: farmers and customers who can't visit, founders and the people they hope to serve, students and the alumni who might help them.</p>
-          <p>Away from a screen, I write songs, sing, and take photos of cute architecture, quiet nature and anything with a vintage feel.</p>
-          <ul class="tags"><li>Faith-driven</li><li>Community-first</li></ul>
-          <div class="sig"><img class="seal" src="images/seal.png" alt="" width="256" height="256"><span class="hand">Tina</span></div>
-        </div>
-        <div class="about-side">
-        <figure class="print" style="--rot:2deg">
-          <img src="images/tina-ferris.webp" alt="AI watercolor of Tina smiling in a selfie high above an amusement park at sunset, with roller coasters behind her." loading="lazy" width="964" height="778">
-          <figcaption>up high at golden hour</figcaption>
-        </figure>
-        <aside class="strengths more-card" aria-label="The longer version">
-          <h3>The longer version</h3>
-          <p class="sub">My About page goes further</p>
-          <ul>
-            <li>Who I am off the clock</li>
-            <li>Songs that started with listening</li>
-            <li>My process, in my own words</li>
-            <li>My CliftonStrengths and what they look like</li>
-            <li>The story behind my song "Evergreen"</li>
-            <li>My music and the instruments I play</li>
-            <li>Photographs I've taken</li>
-          </ul>
-          <a class="btn" href="about.html">Read my About page</a>
-        </aside>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section contact" id="contact" data-toc="Say hello">
-    <div class="wrap">
-      <div class="merge" aria-hidden="true">
-        <div class="diamond"></div>
-        <svg viewBox="0 0 72 72"><path d="M44 66 V12 M35 21 L44 11 L53 21 M24 66 C24 52 44 48 44 36" fill="none" stroke="#2f353a" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <h2 class="painted-type orange">Let's merge</h2>
-      <p>Thanks for stopping by! I'd love to hear about UX research roles, a project you're stuck on, or a song you can't get out of your head.</p>
-      <div class="email-row">
-        <span class="email" id="emailText">tiwuchao@umich.edu</span>
-        <button class="copy" id="copyEmail" type="button">Copy email</button>
-      </div>
-      <div class="links">
-        <a href="https://www.linkedin.com/in/tina-wu-chao/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="Tina-Chao-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
       </div>
     </div>
   </section>
