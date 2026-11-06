@@ -1156,3 +1156,46 @@ img.seal { display: block; object-fit: contain; }
 .more-sub { font-size: var(--t-xs); line-height: 1.35; color: var(--ink-soft); }
 @media (max-width: 420px) { .more-tile { width: 280px; grid-template-columns: 84px minmax(0, 1fr); } .more-tile img { width: 84px; height: 76px; } }
 @media (prefers-reduced-motion: reduce) { .more-tile { transition: none; } .more-tile:hover { transform: none; } }
+
+/* ---------- Gallery page ---------- */
+.gal-head { display: grid; justify-items: start; }
+.gal-head h1 { font-size: clamp(2.6rem, 6.4vw, 5rem); }
+.gal-lede { max-width: 56ch; font-size: clamp(1.1rem, 2vw, 1.35rem); color: var(--ink-soft); margin: 1.1rem 0 0; line-height: 1.5; }
+.gal-section { padding-block: clamp(48px, 7vw, 88px) 0; }
+.gal-h2 { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.8rem, 3.8vw, 2.6rem); line-height: 1.05; margin: 0 0 1.4rem; }
+.gal-grid { columns: 3 240px; column-gap: 22px; }
+.gal-grid.two { columns: 2 280px; }
+.gal-grid.photos { columns: 4 200px; }
+.gal-item { break-inside: avoid; margin: 0 0 26px; }
+.gal-open { all: unset; display: block; width: 100%; cursor: zoom-in; border-radius: 6px; }
+.gal-open:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+.gal-open img { width: 100%; height: auto; border-radius: 6px; box-shadow: 0 1px 2px rgba(30, 36, 42, .12), 0 8px 18px rgba(30, 36, 42, .12); transition: transform .3s ease; }
+.gal-open:hover img { transform: translateY(-3px); }
+.gal-item figcaption { margin-top: 10px; display: grid; gap: 2px; }
+.gal-item figcaption strong { font-weight: 800; }
+.gal-meta { font-size: var(--t-s); color: var(--ink-soft); line-height: 1.45; }
+.gal-soon, .gal-note { color: var(--ink-soft); font-style: italic; margin: 0 0 1rem; }
+/* the Lighthouse story: sketches to sweatshirt, in order */
+.story { margin: 0 0 clamp(40px, 6vw, 64px); padding: clamp(20px, 3.5vw, 36px); border-radius: 14px; background: rgba(255, 255, 255, .45); box-shadow: 0 0 0 1.5px var(--line); }
+.story-text { max-width: 68ch; }
+.story-kicker { margin: 0 0 6px; font-weight: 800; font-size: var(--t-xs); letter-spacing: .14em; text-transform: uppercase; color: var(--rust); }
+.story h3 { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.12; margin: 0 0 .7rem; }
+.story-text p:last-child { margin: 0; font-size: var(--t-l); line-height: 1.55; }
+.story-steps { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+.story-step { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 8px 8px; align-content: start; min-width: 0; }
+.story-step .gal-open { grid-column: 1 / -1; }
+.story-step img { aspect-ratio: 1; object-fit: contain; background: #ebe5d9; }
+.story-n { display: grid; place-items: center; width: 24px; height: 22px; border-radius: 4px; background: var(--sign); color: #fff; font-weight: 800; font-size: .75rem; }
+.story-label { font-weight: 700; font-size: var(--t-s); line-height: 1.25; }
+.story-more { margin-top: 26px; padding-top: 18px; border-top: 1px dashed var(--line); }
+.gal-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 220px)); gap: 20px; }
+@media (max-width: 860px) { .story-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .story-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .gal-pair { grid-template-columns: 1fr 1fr; } }
+/* bigger view */
+.gal-lightbox { width: min(94vw, 1100px); max-height: 92vh; padding: 0; border: 0; border-radius: 12px; background: #1f2326; color: #fbf4e6; overflow: hidden; }
+.gal-lightbox::backdrop { background: rgba(20, 24, 28, .78); }
+.gal-lightbox img { display: block; max-width: 100%; max-height: calc(92vh - 70px); margin: 0 auto; object-fit: contain; }
+.gal-lightbox .gl-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; }
+.gal-lightbox .gl-cap { margin: 0; font-weight: 700; }
+.gal-lightbox .gl-close { font: 800 var(--t-s) var(--f-body); color: #fbf4e6; background: none; border: 2px solid currentColor; border-radius: 999px; padding: 6px 16px; cursor: pointer; }
+@media (prefers-reduced-motion: reduce) { .gal-open img { transition: none; } .gal-open:hover img { transform: none; } }

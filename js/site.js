@@ -200,7 +200,7 @@ document.documentElement.lang = 'en';
   /* an emoji beside each section name in "On this page"; a section can set its own with data-toc-icon="…" */
   const TOC_ICONS = {
     'in2being': '🩺', 'Argus Farm Stop': '🥕', 'Songbird Cafe': '☕', 'LendMate Alum': '🤝', 'Fourth Soil Farm': '🌱',
-    'My process': '🛣️', 'Studio': '🎙️', 'About me': '👋', 'Say hello': '✉️', "Let's merge": '✉️', 'More work': '📂',
+    'My process': '🛣️', 'Studio': '🎙️', 'About me': '👋', 'Say hello': '✉️', "Let's merge": '✉️', 'More work': '📂', 'Gallery': '🖼️', 'Graphic design': '🖌️', 'Making': '🪵', 'Artwork': '🎨',
     'At a glance': '📌', 'People': '👥', 'Gift tags': '🎁', 'Songs from listening': '🎧', 'Strengths': '💪',
     'My music': '🎵', 'Evergreen': '🌲', 'Photographs': '📷',
     'Overview': '🧭', 'The brief': '📋', 'The context': '📋', 'Listening': '👂', 'Watching': '👀', 'The insight': '💡',
@@ -273,6 +273,25 @@ document.documentElement.lang = 'en';
     if (!toc || !toc.classList.contains('open')) return;
     toc.classList.remove('open'); tocBtn.setAttribute('aria-expanded', 'false');
     if (refocus) tocBtn.focus();
+  }
+
+  /* ---- gallery: click a piece to see it larger ---- */
+  const galButtons = document.querySelectorAll('.gal-open');
+  if (galButtons.length) {
+    const dlg = document.createElement('dialog');
+    dlg.className = 'gal-lightbox';
+    dlg.setAttribute('aria-label', 'Larger view');
+    dlg.innerHTML = '<img alt=""><div class="gl-bar"><p class="gl-cap"></p><button class="gl-close" type="button">Close</button></div>';
+    document.body.appendChild(dlg);
+    const big = dlg.querySelector('img'), cap = dlg.querySelector('.gl-cap');
+    galButtons.forEach(b => b.addEventListener('click', () => {
+      const im = b.querySelector('img');
+      big.src = b.dataset.full; big.alt = im ? im.alt : '';
+      cap.textContent = (b.getAttribute('aria-label') || '').replace(/^View larger: /, '');
+      if (dlg.showModal) dlg.showModal(); else window.open(b.dataset.full, '_blank');
+    }));
+    dlg.querySelector('.gl-close').addEventListener('click', () => dlg.close());
+    dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
   }
 
   /* ---- boot ---- */
