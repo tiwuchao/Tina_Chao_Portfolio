@@ -200,7 +200,7 @@ document.documentElement.lang = 'en';
   /* an emoji beside each section name in "On this page"; a section can set its own with data-toc-icon="…" */
   const TOC_ICONS = {
     'in2being': '🩺', 'Argus Farm Stop': '🥕', 'Songbird Cafe': '☕', 'LendMate Alum': '🤝', 'Fourth Soil Farm': '🌱',
-    'My process': '🛣️', 'Studio': '🎙️', 'About me': '👋', 'Say hello': '✉️', "Let's merge": '✉️',
+    'My process': '🛣️', 'Studio': '🎙️', 'About me': '👋', 'Say hello': '✉️', "Let's merge": '✉️', 'More work': '📂',
     'At a glance': '📌', 'People': '👥', 'Gift tags': '🎁', 'Songs from listening': '🎧', 'Strengths': '💪',
     'My music': '🎵', 'Evergreen': '🌲', 'Photographs': '📷',
     'Overview': '🧭', 'The brief': '📋', 'The context': '📋', 'Listening': '👂', 'Watching': '👀', 'The insight': '💡',
