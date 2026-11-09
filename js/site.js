@@ -197,16 +197,6 @@ document.documentElement.lang = 'en';
   /* ---- on this page: a route card listing the sections of the About page or a case study ---- */
   const LIST_ICON = '<svg viewBox="0 0 26 18" aria-hidden="true"><path d="M10 3h13M10 9h13M10 15h13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="4.5" cy="3" r="1.9" fill="currentColor"/><circle cx="4.5" cy="9" r="1.9" fill="currentColor"/><circle cx="4.5" cy="15" r="1.9" fill="currentColor"/></svg>';
   const slug = t => t.toLowerCase().replace(/&/g, 'and').replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-  /* an emoji beside each section name in "On this page"; a section can set its own with data-toc-icon="…" */
-  const TOC_ICONS = {
-    'in2being': '🩺', 'Argus Farm Stop': '🥕', 'Songbird Cafe': '☕', 'LendMate Alum': '🤝', 'Fourth Soil Farm': '🌱',
-    'My process': '🛣️', 'Studio': '🎙️', 'About me': '👋', 'Say hello': '✉️', "Let's merge": '✉️', 'More work': '📂', 'Gallery': '🖼️', 'Graphic design': '🖌️', 'Making': '🪵', 'Artwork': '🎨',
-    'At a glance': '📌', 'People': '👥', 'Gift tags': '🎁', 'Songs from listening': '🎧', 'Strengths': '💪',
-    'My music': '🎵', 'Evergreen': '🌲', 'Photographs': '📷',
-    'Overview': '🧭', 'The brief': '📋', 'The context': '📋', 'Listening': '👂', 'Watching': '👀', 'The insight': '💡',
-    'What surprised me': '❗', 'What it meant': '🧩', 'The design': '✏️', 'Testing it': '🧪', 'After testing': '🔧',
-    'Handoff': '📦', 'Results': '📊', 'Recommendations': '📝', 'Where it landed': '🏁', 'Reflection': '💭'
-  };
   const tocList = [];
   if (view) {
     view.querySelectorAll(isHome ? '[data-toc]' : ':scope > section.mile, :scope > [data-toc]').forEach(el => {
@@ -219,7 +209,7 @@ document.documentElement.lang = 'en';
       let id = el.id;
       if (el.tagName === 'HEADER') id = view.id;
       else if (!id) { const base = view.id + '-' + slug(label); id = base; for (let k = 2; document.getElementById(id); k++) id = base + '-' + k; el.id = id; }
-      tocList.push({ el, label, n, id, icon: el.dataset.tocIcon || TOC_ICONS[label] || '' });
+      tocList.push({ el, label, n, id });
     });
   }
   let toc = null, tocBtn = null, tocItems = [];
@@ -227,8 +217,10 @@ document.documentElement.lang = 'en';
     toc = document.createElement('div');
     toc.className = 'toc';
     toc.innerHTML = '<button class="toc-toggle" type="button" aria-expanded="false" aria-controls="tocPanel">' + LIST_ICON + '<span>On this page</span></button>'
-      + '<nav class="toc-panel" id="tocPanel" aria-label="On this page"><p class="toc-head">' + LIST_ICON + '<span>on this page</span></p><ol class="toc-list"></ol></nav>'
-      + '<div class="toc-rail" aria-hidden="true"></div>';
+      + '<nav class="toc-panel" id="tocPanel" aria-label="On this page"><div class="toc-head">' + LIST_ICON + '<span>on this page</span>'
+      + '<button class="toc-hide" type="button" aria-label="Hide the page guide">Hide</button></div><ol class="toc-list"></ol></nav>'
+      + '<div class="toc-rail" aria-hidden="true"></div>'
+      + '<button class="toc-show" type="button">' + LIST_ICON + '<span>Show page guide</span></button>';
     document.body.appendChild(toc);
     tocBtn = toc.querySelector('.toc-toggle');
     const list = toc.querySelector('.toc-list'), rail = toc.querySelector('.toc-rail');
@@ -237,15 +229,24 @@ document.documentElement.lang = 'en';
       a.href = '#' + it.id;
       mk.className = 'toc-mk' + (it.n ? '' : ' dot'); mk.setAttribute('aria-hidden', 'true'); mk.textContent = it.n;
       lb.className = 'toc-lb'; lb.textContent = it.label;
-      const ic = document.createElement('span'); ic.className = 'toc-ic'; ic.setAttribute('aria-hidden', 'true'); ic.textContent = it.icon;
-      a.append(mk, ic, lb); li.append(a); list.append(li);
-      const dot = document.createElement('span'), dm = document.createElement('i'), de = document.createElement('b');
-      de.textContent = it.icon; dot.append(dm, de); rail.append(dot);
+      a.append(mk, lb); li.append(a); list.append(li);
+      const dot = document.createElement('span'); dot.append(document.createElement('i')); rail.append(dot);
       return { el: it.el, a, dot };
     });
     const toggleToc = () => { const o = toc.classList.toggle('open'); tocBtn.setAttribute('aria-expanded', o ? 'true' : 'false'); };
     tocBtn.addEventListener('click', toggleToc);
     rail.addEventListener('click', toggleToc);   // the trail of circles opens the full list too
+    /* Hide takes the whole guide off the page (card, button and circles); "Show page guide" brings it back.
+       The choice is remembered on this browser, so it stays hidden on the other pages too. */
+    const showBtn = toc.querySelector('.toc-show');
+    const setOff = off => {
+      toc.classList.toggle('off', off);
+      if (off) { toc.classList.remove('open'); tocBtn.setAttribute('aria-expanded', 'false'); }
+      try { if (off) localStorage.setItem('tocHidden', '1'); else localStorage.removeItem('tocHidden'); } catch (e) {}
+    };
+    try { if (localStorage.getItem('tocHidden') === '1') toc.classList.add('off'); } catch (e) {}
+    toc.querySelector('.toc-hide').addEventListener('click', () => { setOff(true); showBtn.focus(); });
+    showBtn.addEventListener('click', () => { setOff(false); (getComputedStyle(tocBtn).display !== 'none' ? tocBtn : toc.querySelector('.toc-list a')).focus(); });
     list.addEventListener('click', e => {
       const a = e.target.closest('a'); if (!a) return;
       closeToc();
