@@ -1204,3 +1204,55 @@ img.seal { display: block; object-fit: contain; }
 .gal-lightbox .gl-cap { margin: 0; font-weight: 700; }
 .gal-lightbox .gl-close { font: 800 var(--t-s) var(--f-body); color: #fbf4e6; background: none; border: 2px solid currentColor; border-radius: 999px; padding: 6px 16px; cursor: pointer; }
 @media (prefers-reduced-motion: reduce) { .gal-open img { transition: none; } .gal-open:hover img { transform: none; } }
+
+/* ---- home: University of Michigan line and the highway intro in the hero card ---- */
+.hero-school { margin: .45rem 0 0; font-weight: 800; font-size: clamp(1.02rem, 1.6vw, 1.18rem); letter-spacing: .01em; color: var(--ink); }
+.hero-road { display: flex; align-items: flex-start; gap: 9px; max-width: 52ch; text-wrap: pretty; margin: -.4rem 0 1.4rem; font-size: var(--t-s); line-height: 1.45; color: var(--ink); }
+.hero-road svg { flex: none; width: 20px; height: 20px; margin-top: 1px; color: var(--sign); }
+.hero-road a { color: #7a2f15; font-weight: 800; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+/* ---- home: a peek at the Gallery under the About section ---- */
+.gallery-peek { display: flex; align-items: center; gap: clamp(16px, 3vw, 28px); margin-top: clamp(28px, 4vw, 44px); padding: 16px 22px 16px 16px;
+  border-radius: 10px; background: rgba(251, 248, 241, .85); box-shadow: inset 0 0 0 1.5px rgba(47, 106, 85, .35), 0 8px 20px rgba(30, 36, 42, .08);
+  color: var(--ink); text-decoration: none; transition: box-shadow .2s ease, transform .2s ease; }
+.gallery-peek:hover { box-shadow: inset 0 0 0 2px var(--sign), 0 10px 24px rgba(30, 36, 42, .14); transform: translateY(-2px); }
+.gallery-peek:focus-visible { outline: 3px solid var(--rust); outline-offset: 3px; }
+.gp-thumbs { display: flex; flex: none; }
+.gp-thumbs img { width: 76px; height: 76px; object-fit: cover; border-radius: 4px; border: 3px solid #fff; box-shadow: 0 3px 8px rgba(30, 36, 42, .18); }
+.gp-thumbs img + img { margin-left: -14px; }
+.gp-thumbs img:nth-child(odd) { transform: rotate(-3deg); } .gp-thumbs img:nth-child(even) { transform: rotate(3deg); }
+.gp-text { display: grid; gap: 2px; }
+.gp-text .hand { color: var(--rust); font-size: 1.5rem; line-height: 1; }
+.gp-text strong { font-size: 1.15rem; }
+.gp-sub { font-size: var(--t-s); color: var(--ink-soft); }
+@media (max-width: 560px) { .gallery-peek { flex-direction: column; align-items: flex-start; } .gp-thumbs img { width: 62px; height: 62px; } }
+/* ---- About: click the stamp to read its story ---- */
+.stamp-story-wrap { margin-top: 1.6rem; }
+.stamp-btn { display: inline-flex; align-items: center; gap: 14px; padding: 8px 18px 8px 8px; border: 0; border-radius: 12px; background: transparent; cursor: pointer; text-align: left; color: var(--ink); font: inherit; }
+.stamp-btn img { width: 64px; height: 64px; mix-blend-mode: multiply; transform: rotate(-4deg); transition: transform .2s ease; }
+.stamp-btn:hover img, .stamp-btn:focus-visible img { transform: rotate(-4deg) translateY(-3px) scale(1.04); }
+.stamp-btn:focus-visible { outline: 3px solid var(--rust); outline-offset: 2px; }
+.stamp-btn .hand { display: block; color: var(--rust); font-size: 1.7rem; line-height: 1; }
+.stamp-hint { display: block; font-size: var(--t-s); font-weight: 700; color: var(--ink-soft); }
+.stamp-btn[aria-expanded="true"] .stamp-hint { visibility: hidden; }
+.stamp-story { position: relative; display: grid; grid-template-columns: 120px 1fr; gap: 22px; align-items: start; margin-top: 12px; padding: clamp(20px, 3vw, 30px);
+  background: #fbf8f1 url("../images/paper.jpg"); background-size: 512px; border-radius: 6px; box-shadow: 0 1px 2px rgba(30, 36, 42, .14), 0 12px 28px rgba(30, 36, 42, .14);
+  transform-origin: top left; }
+.stamp-story[hidden] { display: none; }
+.stamp-imprint { width: 120px; height: 120px; mix-blend-mode: multiply; transform: rotate(-3deg); }
+.stamp-text h3 { margin: 0 0 8px; font-family: var(--f-display); font-weight: 400; font-size: var(--t-xl); }
+.stamp-text p { margin: 0 0 .8em; }
+.stamp-text p:last-child { margin: 0; }
+.stamp-story.opening { animation: paper-in .35s cubic-bezier(.2, .7, .2, 1) both; }
+.stamp-story.opening .stamp-imprint { animation: stamp-press .6s .15s cubic-bezier(.3, .7, .3, 1) both; }
+.stamp-story.opening .stamp-text { animation: ink-in .5s .45s ease both; }
+@keyframes paper-in { from { opacity: 0; transform: translateY(-8px) scaleY(.94); } to { opacity: 1; transform: none; } }
+@keyframes stamp-press {
+  0% { opacity: 0; transform: translateY(-26px) scale(1.35) rotate(-10deg); filter: blur(2px); }
+  55% { opacity: 1; transform: translateY(0) scale(.94) rotate(-3deg); filter: blur(.6px); }
+  75% { transform: scale(1.02) rotate(-3deg); filter: blur(0); }
+  100% { opacity: 1; transform: scale(1) rotate(-3deg); filter: none; } }
+@keyframes ink-in { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 560px) { .stamp-story { grid-template-columns: 1fr; } .stamp-imprint { width: 96px; height: 96px; } }
+@media (prefers-reduced-motion: reduce) { .stamp-story.opening, .stamp-story.opening .stamp-imprint, .stamp-story.opening .stamp-text { animation: none; } .gallery-peek, .stamp-btn img { transition: none; } }
+.stamp-text [lang^="zh"] { white-space: nowrap; }
+.hero-road a { white-space: nowrap; }
