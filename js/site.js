@@ -22,7 +22,7 @@ document.documentElement.lang = 'en';
     const y = scrollY;
     nav.classList.toggle('solid', !hero || y > (hero.offsetHeight - 90));
     if (hero && heroArt && !reduce && y < hero.offsetHeight * 1.2) heroArt.style.transform = `translate3d(0, ${y * 0.22}px, 0) scale(1.04)`;
-    moveCar(); spyToc(); spyNav();
+    moveCar(); holdToc(); spyToc(); spyNav();
   }
   addEventListener('scroll', onScroll, { passive: true });
 
@@ -259,6 +259,14 @@ document.documentElement.lang = 'en';
     document.addEventListener('click', e => { if (toc.classList.contains('open') && !toc.contains(e.target)) closeToc(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && toc.classList.contains('open')) closeToc(true); });
   }
+  /* homepage: keep the page guide out of the way until most of the top section has scrolled by (the CSS only hides it below 1300px wide) */
+  function holdToc() {
+    if (!toc || !isHome || !hero) return;
+    const hold = hero.getBoundingClientRect().bottom > innerHeight * .6;
+    if (hold === toc.classList.contains('hold')) return;
+    toc.classList.toggle('hold', hold);
+    if (hold) closeToc();
+  }
   function spyToc() {
     if (!tocItems.length) return;
     const line = innerHeight * .32;
@@ -309,7 +317,7 @@ document.documentElement.lang = 'en';
   }
 
   /* ---- boot ---- */
-  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { layoutRoad(); if (!reduce) sizeRain(); }, 120); });
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { layoutRoad(); holdToc(); if (!reduce) sizeRain(); }, 120); });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutRoad);
   addEventListener('load', layoutRoad);
   // a link to a section the route card names (e.g. argus.html#argus-reflection) arrives before that id exists

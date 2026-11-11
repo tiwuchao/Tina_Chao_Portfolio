@@ -1,6 +1,6 @@
 # Tina Chao · UX portfolio
 
-A watercolor highway portfolio. Live at https://tiwuchao.github.io/Tina_Chao_Portfolio/
+A watercolor highway portfolio. Live at https://tinawuchao.com/ (the old address, https://tiwuchao.github.io/Tina_Chao_Portfolio/, forwards there).
 
 ## What's in this folder
 
@@ -37,5 +37,6 @@ Upload the new PDF with **Add file → Upload files**, named exactly `Tina-Chao-
 - File names are case-sensitive on GitHub Pages. `Images/Hero.webp` won't find `images/hero.webp`.
 - Image paths inside `css/site.css` start with `../images/`, because that file sits in the `css` folder.
 - Old links to the one-page version (like `.../#argus` or `.../#about-me`) still work: the homepage forwards them to the new page.
-- Each page's link preview points to `https://tiwuchao.github.io/Tina_Chao_Portfolio/`. If the site moves to its own domain, those `og:` lines at the top of each page need the new address.
+- Each page's link preview points to `https://tinawuchao.com/`. If the domain ever changes, update the `og:` lines at the top of each page.
+- The `CNAME` file holds the custom domain (tinawuchao.com). Leave it in place, or GitHub Pages stops serving the site at that address. The domain is registered at Porkbun, and its DNS records point to GitHub Pages.
 - Fonts load from Google Fonts. Everything else is served from this folder.

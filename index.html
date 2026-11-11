@@ -13,8 +13,8 @@
 <meta property="og:site_name" content="Tina Chao">
 <meta property="og:title" content="Tina Chao · UX Researcher">
 <meta property="og:description" content="Tina Chao, a UX researcher at the University of Michigan. Three case studies, how I work, and the songs I write.">
-<meta property="og:url" content="https://tiwuchao.github.io/Tina_Chao_Portfolio/">
-<meta property="og:image" content="https://tiwuchao.github.io/Tina_Chao_Portfolio/images/og/home.jpg">
+<meta property="og:url" content="https://tinawuchao.com/">
+<meta property="og:image" content="https://tinawuchao.com/images/og/home.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Watercolor painting of a rain-slick road at sunset">
@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Nanum+Pen+Script&family=Overpass:ital,wght@0,400;0,600;0,800;1,400&display=swap">
-<link rel="stylesheet" href="css/site.css?v=20261106c">
+<link rel="stylesheet" href="css/site.css?v=20261111d">
 <style>.tt-sticker { filter: url(#sticker-cut); }</style>
 </head>
 <body>
@@ -99,8 +99,7 @@
       </div>
       <figure class="polaroid">
         <img src="images/tina-portrait.webp" alt="AI watercolor portrait of Tina smiling, in glasses and a white lace top, against a red brick wall." width="820" height="820" fetchpriority="high">
-        <figcaption>hi, I'm Tina!<span class="pol-note">every project starts on this road
-          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 6 C 14 16, 20 24, 21 34 M14 28 L21 35 L28 27" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></figcaption>
+        <figcaption>hi, I'm Tina!</figcaption>
       </figure>
     </div>
     <div class="torn" aria-hidden="true"></div>
@@ -214,12 +213,6 @@
             <span class="more-meta">Class project · 2026</span>
             <strong>Songbird Cafe</strong>
             <span class="more-sub">Ordering ahead without the guesswork</span>
-          </a></li>
-          <li><a class="more-tile" href="gallery.html#gal-design">
-            <img src="images/gallery/lh-sweatshirt.webp" alt="" width="500" height="500" loading="lazy">
-            <span class="more-meta">Brand &amp; visual work · 2026</span>
-            <strong>Lighthouse merch and more</strong>
-            <span class="more-sub">A logo, a sweatshirt, posters and brochures, in my Gallery</span>
           </a></li>
         </ul>
       </section>
@@ -358,15 +351,19 @@
         </aside>
         </div>
       </div>
-      <a class="gallery-peek" href="gallery.html">
-        <span class="gp-thumbs" aria-hidden="true">
-          <img src="images/gallery/lh-sweatshirt.webp" alt="" loading="lazy">
-          <img src="images/gallery/zodiac.webp" alt="" loading="lazy">
-          <img src="images/gallery/peonypaint.webp" alt="" loading="lazy">
-          <img src="images/gallery/lamp.webp" alt="" loading="lazy">
-        </span>
-        <span class="gp-text"><span class="hand">things I've made</span><strong>Open my Gallery →</strong><span class="gp-sub">Graphic design, things I've built, drawings, paintings and photographs</span></span>
-      </a>
+      <section class="gallery-peek" aria-labelledby="gpTitle">
+        <div class="gp-text">
+          <p class="hand">things I've made</p>
+          <h3 id="gpTitle">From my Gallery</h3>
+          <p class="gp-sub">Graphic design, things I've built, drawings, paintings and photographs</p>
+        </div>
+        <ul class="gp-track" role="list">
+          <li><a href="gallery.html#gal-design"><img src="images/gallery/kindle-slide.webp" alt="" width="1400" height="786" loading="lazy"><span>Kindle promo slide</span></a></li>
+          <li><a href="gallery.html#gal-design"><img src="images/gallery/lh-group-e.webp" alt="" width="1200" height="900" loading="lazy"><span>Lighthouse sweatshirt</span></a></li>
+          <li><a href="gallery.html#gal-art"><img src="images/gallery/duck.webp" alt="" width="611" height="458" loading="lazy"><span>Duck on the water</span></a></li>
+        </ul>
+        <a class="btn gp-more" href="gallery.html" aria-label="See more in my Gallery">See more →</a>
+      </section>
     </div>
   </section>
 
@@ -471,6 +468,7 @@
   </div>
 </footer>
 
-<script src="js/site.js?v=20261106b"></script>
+<script src="js/site.js?v=20261111c"></script>
+
 </body>
 </html>
