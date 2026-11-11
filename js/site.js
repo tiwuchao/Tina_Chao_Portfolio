@@ -276,6 +276,22 @@ document.documentElement.lang = 'en';
     if (refocus) tocBtn.focus();
   }
 
+  /* ---- homepage: the Gallery carousel's arrow buttons ---- */
+  document.querySelectorAll('.gallery-peek').forEach(peek => {
+    const track = peek.querySelector('.gp-track'), btns = peek.querySelectorAll('.gp-btn');
+    if (!track || !btns.length) return;
+    const ends = () => {
+      const max = track.scrollWidth - track.clientWidth - 2;
+      btns.forEach(b => { b.disabled = b.dataset.dir === '-1' ? track.scrollLeft <= 2 : track.scrollLeft >= max; });
+    };
+    btns.forEach(b => b.addEventListener('click', () => {
+      track.scrollBy({ left: Number(b.dataset.dir) * track.clientWidth * .8, behavior: reduce ? 'auto' : 'smooth' });
+    }));
+    track.addEventListener('scroll', ends, { passive: true });
+    addEventListener('resize', ends);
+    ends();
+  });
+
   /* ---- About: click the stamp to read its story ---- */
   document.querySelectorAll('.stamp-btn').forEach(btn => {
     const panel = document.getElementById(btn.getAttribute('aria-controls'));

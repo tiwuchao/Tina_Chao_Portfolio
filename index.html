@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Nanum+Pen+Script&family=Overpass:ital,wght@0,400;0,600;0,800;1,400&display=swap">
-<link rel="stylesheet" href="css/site.css?v=20261106c">
+<link rel="stylesheet" href="css/site.css?v=20261111a">
 <style>.tt-sticker { filter: url(#sticker-cut); }</style>
 </head>
 <body>
@@ -358,15 +358,30 @@
         </aside>
         </div>
       </div>
-      <a class="gallery-peek" href="gallery.html">
-        <span class="gp-thumbs" aria-hidden="true">
-          <img src="images/gallery/lh-sweatshirt.webp" alt="" loading="lazy">
-          <img src="images/gallery/zodiac.webp" alt="" loading="lazy">
-          <img src="images/gallery/peonypaint.webp" alt="" loading="lazy">
-          <img src="images/gallery/lamp.webp" alt="" loading="lazy">
-        </span>
-        <span class="gp-text"><span class="hand">things I've made</span><strong>Open my Gallery →</strong><span class="gp-sub">Graphic design, things I've built, drawings, paintings and photographs</span></span>
-      </a>
+      <section class="gallery-peek" aria-labelledby="gpTitle">
+        <div class="gp-text">
+          <p class="hand">things I've made</p>
+          <h3 id="gpTitle"><a href="gallery.html">Open my Gallery →</a></h3>
+          <p class="gp-sub">Graphic design, things I've built, drawings, paintings and photographs</p>
+          <div class="gp-nav">
+            <button class="gp-btn" type="button" data-dir="-1" aria-label="Scroll back">←</button>
+            <button class="gp-btn" type="button" data-dir="1" aria-label="See more pieces">→</button>
+          </div>
+        </div>
+        <ul class="gp-track" role="list" tabindex="0" aria-label="Pieces from my Gallery, scroll sideways for more">
+          <li><a href="gallery.html#gal-design"><img src="images/gallery/lh-sweatshirt.webp" alt="" width="500" height="500" loading="lazy"><span>Lighthouse sweatshirt</span></a></li>
+          <li><a href="gallery.html#gal-art"><img src="images/gallery/zodiac.webp" alt="" width="1050" height="1400" loading="lazy"><span>A zodiac family portrait</span></a></li>
+          <li><a href="gallery.html#gal-making"><img src="images/gallery/lamp.webp" alt="" width="460" height="381" loading="lazy"><span>Lamp of Dubai</span></a></li>
+          <li><a href="gallery.html#gal-design"><img src="images/gallery/kindle-slide.webp" alt="" width="1400" height="786" loading="lazy"><span>Kindle promo slide</span></a></li>
+          <li><a href="gallery.html#gal-art"><img src="images/gallery/duck.webp" alt="" width="611" height="458" loading="lazy"><span>Duck on the water</span></a></li>
+          <li><a href="gallery.html#gal-design"><img src="images/gallery/setapart.webp" alt="" width="724" height="924" loading="lazy"><span>Set Apart hoodie</span></a></li>
+          <li><a href="gallery.html#gal-design"><img src="images/gallery/lh-sketches.webp" alt="" width="1400" height="1050" loading="lazy"><span>Lighthouse logo sketches</span></a></li>
+          <li><a href="gallery.html#gal-making"><img src="images/gallery/dinohold.webp" alt="" width="430" height="246" loading="lazy"><span>Dinohold</span></a></li>
+          <li><a href="gallery.html#gal-design"><img src="images/gallery/onigiri.webp" alt="" width="612" height="1290" loading="lazy"><span>Onigiri fundraiser</span></a></li>
+          <li><a href="gallery.html#gal-design"><img src="images/gallery/peter.webp" alt="" width="568" height="728" loading="lazy"><span>1 Peter 2:9 type study</span></a></li>
+          <li><a href="gallery.html#gal-design"><img src="images/gallery/lh-jam.webp" alt="" width="798" height="802" loading="lazy"><span>Jam session flyer</span></a></li>
+        </ul>
+      </section>
     </div>
   </section>
 
@@ -471,6 +486,6 @@
   </div>
 </footer>
 
-<script src="js/site.js?v=20261106b"></script>
+<script src="js/site.js?v=20261111a"></script>
 </body>
 </html>
