@@ -5,6 +5,17 @@
 /* Layout: one long sheet of cold-press paper you drive down — the hero painting's road becomes a hand-painted
    highway: projects are numbered entrances, the process is five mile markers, the studio is a night stop
    with lanterns, the about page sits under a painted skyline, and a merge sign closes it out. */
+
+/* Middle-dot fix: Overpass marks "·" as an accent, so browsers give it zero width and it runs into the
+   next word ("Information ·University"). This face covers only that one character with a system font,
+   so every "·" on the site gets normal spacing, including ones added later. */
+@font-face { font-family: "Dot Fix"; font-weight: 100 599; unicode-range: U+00B7;
+  src: local("Helvetica Neue"), local("HelveticaNeue"), local("Arial"), local("ArialMT"), local("Segoe UI"), local("SegoeUI"),
+       local("Roboto"), local("Roboto-Regular"), local("DejaVu Sans"), local("DejaVuSans"); }
+@font-face { font-family: "Dot Fix"; font-weight: 600 900; unicode-range: U+00B7;
+  src: local("Helvetica Neue Bold"), local("HelveticaNeue-Bold"), local("Arial Bold"), local("Arial-BoldMT"), local("Segoe UI Bold"), local("SegoeUI-Bold"),
+       local("Roboto Bold"), local("Roboto-Bold"), local("DejaVu Sans Bold"), local("DejaVuSans-Bold"); }
+
 :root {
   --paper: #f5f2ec;
   --paper-deep: #e9e2d6;
@@ -20,7 +31,7 @@
   --line: rgba(47, 53, 58, .16);
 
   --f-display: "Caprasimo", "Cooper Black", "Georgia", serif;
-  --f-body: "Overpass", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Dot Fix", "Overpass", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --f-hand: "Nanum Pen Script", "Bradley Hand", "Segoe Print", "Comic Sans MS", cursive;
 
   --t-xs: .8125rem; --t-s: .9375rem; --t-m: 1.0625rem; --t-l: 1.3125rem; --t-xl: 1.75rem;
