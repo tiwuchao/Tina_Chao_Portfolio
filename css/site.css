@@ -1289,3 +1289,13 @@ img.seal { display: block; object-fit: contain; }
 @media (prefers-reduced-motion: reduce) { .stamp-story.opening, .stamp-story.opening .stamp-imprint, .stamp-story.opening .stamp-text { animation: none; } .gp-track a, .stamp-btn img { transition: none; } .gp-track { scroll-behavior: auto; } }
 .stamp-text [lang^="zh"] { white-space: nowrap; }
 .hero-road a { white-space: nowrap; }
+
+/* Hero eyebrow: on phones, put the school on its own line instead of leaving a dangling dot */
+@media (max-width: 560px) {
+  .eyebrow-sep { display: none; }
+  .eyebrow-school { display: block; }
+}
+
+/* Contact: small envelope icon beside the email address */
+.email-wrap { display: inline-flex; align-items: center; gap: .45em; min-width: 0; }
+.email-icon { width: clamp(1.3rem, 3.4vw, 1.75rem); height: auto; flex: none; fill: none; stroke: var(--rust); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
