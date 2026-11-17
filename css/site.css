@@ -856,16 +856,11 @@ img.seal { display: block; object-fit: contain; }
 .ab-people-text > p:not(.hand) { max-width: 54ch; font-size: var(--t-l); line-height: 1.6; margin: 0 0 1.1rem; }
 .ab-people-text > p:last-child { margin-bottom: 0; }
 .people-kicker { margin: 0 0 .3rem; color: var(--rust); font-size: 1.9rem; transform: rotate(-1.5deg); transform-origin: left; }
-/* the wedding bouquets, in a gilt cove frame (images/gold-frame-cove.webp) with a cream mat */
+/* the wedding bouquets, already in their gold frame (images/wedding-flowers-framed.webp) */
 .people-side { grid-column: 2; grid-row: 1; display: grid; justify-items: center; min-width: 0; }
 .wed-photo { position: relative; z-index: 1; width: min(94%, 430px); margin: 0; transform: rotate(-1.2deg); }
-.wed-frame { position: relative; display: block; aspect-ratio: 997 / 1168;
-  background: url("../images/gold-frame-cove.webp") 0 0 / 100% 100% no-repeat;
+.wed-framed { display: block; width: 100%; height: auto;
   box-shadow: 0 2px 3px rgba(30, 36, 42, .35), 0 14px 22px rgba(30, 36, 42, .3), 0 30px 48px rgba(30, 36, 42, .18); }
-/* the photo sits in the frame's opening; the lip casts a soft shadow onto the cream mat */
-.wed-frame img { position: absolute; z-index: -1; left: 16.05%; top: 14.04%; box-sizing: border-box;
-  width: 67.2%; height: 70.8%; max-width: none; object-fit: contain; padding: 2%; background: #f6efdf; /* opening is cut to the photo's shape, so the mat stays even */
-  box-shadow: inset 3px 4px 7px rgba(40, 24, 6, .5), inset -1px -1px 3px rgba(40, 24, 6, .25); }
 .wed-photo figcaption { margin-top: 12px; font-family: var(--f-hand); font-size: 1.4rem; line-height: 1.05; text-align: center; color: var(--ink-soft); text-wrap: balance; }
 @media (max-width: 860px) {
   .ab-people { grid-template-columns: 1fr; }
