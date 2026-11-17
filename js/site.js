@@ -93,12 +93,12 @@ document.documentElement.lang = 'en';
     if (!W || !H) return;
     [svg, carSvg].forEach(s => { s.setAttribute('width', W); s.setAttribute('height', H); s.setAttribute('viewBox', `0 0 ${W} ${H}`); });
     const narrow = W < 760, wr = wrap.getBoundingClientRect();
-    const mid = narrow ? 36 : W / 2;
+    const mid = narrow ? 42 : W / 2;  // phones: just right of the page-guide dots
     const pts = [[mid, 0]];
     wrap.querySelectorAll('.stop').forEach((s, i) => {
       const r = s.getBoundingClientRect();
       const y = r.top - wr.top + r.height * .5;
-      const x = narrow ? mid + (i % 2 ? 9 : -9) : (s.classList.contains('left') ? W / 2 + W * .045 : W / 2 - W * .045);
+      const x = narrow ? mid : (s.classList.contains('left') ? W / 2 + W * .045 : W / 2 - W * .045);
       pts.push([x, y]);
     });
     pts.push([mid, H - 6]);

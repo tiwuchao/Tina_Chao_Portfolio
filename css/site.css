@@ -856,20 +856,16 @@ img.seal { display: block; object-fit: contain; }
 .ab-people-text > p:not(.hand) { max-width: 54ch; font-size: var(--t-l); line-height: 1.6; margin: 0 0 1.1rem; }
 .ab-people-text > p:last-child { margin-bottom: 0; }
 .people-kicker { margin: 0 0 .3rem; color: var(--rust); font-size: 1.9rem; transform: rotate(-1.5deg); transform-origin: left; }
-/* the wedding bouquets, in an antique gold frame with rosettes at the corners and a cream mat */
+/* the wedding bouquets, in a gilt cove frame (images/gold-frame-cove.webp) with a cream mat */
 .people-side { grid-column: 2; grid-row: 1; display: grid; justify-items: center; min-width: 0; }
-.wed-photo { --fw: clamp(15px, 2.2vw, 21px); position: relative; z-index: 1; width: min(90%, 360px); margin: 0; transform: rotate(-1.2deg); }
-.wed-frame { position: relative; display: block; padding: var(--fw); border-radius: 2px;
-  background: repeating-linear-gradient(45deg, rgba(255, 246, 214, .12) 0 2px, rgba(60, 38, 8, .07) 2px 4px),
-    linear-gradient(135deg, #ecd593 0%, #b08434 18%, #f1dea4 36%, #94692a 54%, #e2c57e 72%, #9f7530 88%, #dcc07a 100%);
-  box-shadow: inset 0 0 0 1.5px #5e3f10, inset 0 0 0 4px #ead290, inset 0 0 0 5.5px #7d5719, inset 0 0 0 9px #c99d48, inset 0 0 0 10.5px #6a4814,
-    0 2px 3px rgba(30, 36, 42, .3), 0 18px 32px rgba(30, 36, 42, .28); }
-.wed-frame::before { content: ""; position: absolute; inset: -4px; pointer-events: none;
-  background: var(--rosette) left top / calc(var(--fw) + 8px) no-repeat, var(--rosette) right top / calc(var(--fw) + 8px) no-repeat,
-    var(--rosette) left bottom / calc(var(--fw) + 8px) no-repeat, var(--rosette) right bottom / calc(var(--fw) + 8px) no-repeat; }
-.wed-photo { --rosette: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg stroke='%235e3f10' stroke-width='1.1' fill='%23d6b05c'%3E%3Cellipse cx='20' cy='9.5' rx='5' ry='8.5'/%3E%3Cellipse cx='20' cy='9.5' rx='5' ry='8.5' transform='rotate(45 20 20)'/%3E%3Cellipse cx='20' cy='9.5' rx='5' ry='8.5' transform='rotate(90 20 20)'/%3E%3Cellipse cx='20' cy='9.5' rx='5' ry='8.5' transform='rotate(135 20 20)'/%3E%3Cellipse cx='20' cy='9.5' rx='5' ry='8.5' transform='rotate(180 20 20)'/%3E%3Cellipse cx='20' cy='9.5' rx='5' ry='8.5' transform='rotate(225 20 20)'/%3E%3Cellipse cx='20' cy='9.5' rx='5' ry='8.5' transform='rotate(270 20 20)'/%3E%3Cellipse cx='20' cy='9.5' rx='5' ry='8.5' transform='rotate(315 20 20)'/%3E%3Ccircle cx='20' cy='20' r='7.5' fill='%23f3e1a7'/%3E%3Ccircle cx='20' cy='20' r='3.2' fill='%23a87b2c'/%3E%3C/g%3E%3C/svg%3E"); }
-.wed-frame img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border: clamp(8px, 1.4vw, 12px) solid #f7f0de;
-  box-shadow: 0 0 0 1.5px #6a4814, 0 0 7px 1px rgba(50, 30, 5, .45); }
+.wed-photo { position: relative; z-index: 1; width: min(94%, 430px); margin: 0; transform: rotate(-1.2deg); }
+.wed-frame { position: relative; display: block; aspect-ratio: 997 / 1168;
+  background: url("../images/gold-frame-cove.webp") 0 0 / 100% 100% no-repeat;
+  box-shadow: 0 2px 3px rgba(30, 36, 42, .35), 0 14px 22px rgba(30, 36, 42, .3), 0 30px 48px rgba(30, 36, 42, .18); }
+/* the photo sits in the frame's opening; the lip casts a soft shadow onto the cream mat */
+.wed-frame img { position: absolute; z-index: -1; left: 16.05%; top: 14.04%; box-sizing: border-box;
+  width: 67.2%; height: 70.8%; max-width: none; object-fit: contain; padding: 2%; background: #f6efdf; /* opening is cut to the photo's shape, so the mat stays even */
+  box-shadow: inset 3px 4px 7px rgba(40, 24, 6, .5), inset -1px -1px 3px rgba(40, 24, 6, .25); }
 .wed-photo figcaption { margin-top: 12px; font-family: var(--f-hand); font-size: 1.4rem; line-height: 1.05; text-align: center; color: var(--ink-soft); text-wrap: balance; }
 @media (max-width: 860px) {
   .ab-people { grid-template-columns: 1fr; }
@@ -974,6 +970,12 @@ img.seal { display: block; object-fit: contain; }
 /* ---------- hero: what I'm looking for ---------- */
 .hero-status { display: inline-flex; align-items: center; gap: 9px; margin: -.5rem 0 1.4rem; padding: 6px 14px 5px; border-radius: 999px;
   background: rgba(255, 255, 255, .55); border: 1.5px solid rgba(47, 53, 58, .28); font-weight: 700; font-size: var(--t-s); line-height: 1.3; color: var(--ink); }
+/* on phones the roles line wraps; a soft rounded card reads better than a stretched pill, with the date on its own line */
+@media (max-width: 560px) {
+  .hero-status { display: block; width: fit-content; max-width: 100%; padding: 9px 14px 8px; border-radius: 12px; }
+  .status-sep { display: none; }
+  .status-grad { display: block; margin-top: 2px; font-weight: 600; color: var(--ink-soft); }
+}
 .big-sign { background: linear-gradient(rgba(10, 34, 27, .62), rgba(10, 34, 27, .62)), var(--sign) var(--sign-bg) center / cover; }
 .hero-links { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 1.3rem 0 0; }
 .hero-links a { font-weight: 800; font-size: var(--t-s); color: var(--ink); text-decoration: none; border-bottom: 2px solid #a64d2a; padding-bottom: 1px; }
