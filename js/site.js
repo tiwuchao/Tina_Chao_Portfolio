@@ -284,6 +284,22 @@ document.documentElement.lang = 'en';
     if (refocus) tocBtn.focus();
   }
 
+  /* ---- About: click the stamp to press it and open the story behind the logo ---- */
+  document.querySelectorAll('.stamp-open').forEach(btn => {
+    const panel = document.getElementById(btn.getAttribute('aria-controls'));
+    if (!panel) return;
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      panel.hidden = !open;
+      panel.classList.remove('opening');
+      if (open && !reduce) {
+        btn.classList.remove('pressed'); void btn.offsetWidth; btn.classList.add('pressed');
+        void panel.offsetWidth; panel.classList.add('opening');
+      }
+    });
+  });
+
   /* ---- About: click the stamp to read its story ---- */
   document.querySelectorAll('.stamp-btn').forEach(btn => {
     const panel = document.getElementById(btn.getAttribute('aria-controls'));

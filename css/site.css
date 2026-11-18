@@ -852,7 +852,7 @@ img.seal { display: block; object-fit: contain; }
 .ab-people { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); column-gap: clamp(32px, 6vw, 80px); row-gap: 0; align-items: center; }
 /* the logo story has its own row under the text, so opening it never moves the photo beside the text */
 .ab-people-text { grid-column: 1; grid-row: 1; min-width: 0; }
-.ab-people > .stamp-story-wrap { grid-column: 1; grid-row: 2; min-width: 0; }
+.ab-people > .stamp-story-wrap { grid-column: 1 / -1; grid-row: 2; min-width: 0; margin-top: clamp(40px, 6vw, 72px); }
 .ab-people-text > p:not(.hand) { max-width: 54ch; font-size: var(--t-l); line-height: 1.6; margin: 0 0 1.1rem; }
 .ab-people-text > p:last-child { margin-bottom: 0; }
 .people-kicker { margin: 0 0 .3rem; color: var(--rust); font-size: 1.9rem; transform: rotate(-1.5deg); transform-origin: left; }
@@ -1257,24 +1257,57 @@ img.seal { display: block; object-fit: contain; }
 }
 /* ---- About: click the stamp to read its story ---- */
 .stamp-story-wrap { margin-top: 1.6rem; }
-.stamp-btn { display: inline-flex; align-items: center; gap: 14px; padding: 8px 18px 8px 8px; border: 0; border-radius: 12px; background: transparent; cursor: pointer; text-align: left; color: var(--ink); font: inherit; }
-.stamp-btn img { width: 64px; height: 64px; mix-blend-mode: multiply; transform: rotate(-4deg); transition: transform .2s ease; }
-.stamp-btn:hover img, .stamp-btn:focus-visible img { transform: rotate(-4deg) translateY(-3px) scale(1.04); }
+/* the logo story: always open on paper, with the rest of the story one click away */
+.stamp-kicker { margin: 0 0 6px; color: var(--rust); font-size: 1.8rem; line-height: 1; transform: rotate(-1.5deg); transform-origin: left; }
+.stamp-btn { display: inline-flex; width: auto; min-width: 0; justify-content: flex-start; align-items: center; gap: 6px; margin-top: 4px; padding: 7px 14px; border: 1.5px solid var(--rust); border-radius: 999px;
+  background: transparent; cursor: pointer; color: #8a3a1c; font: inherit; font-weight: 800; font-size: var(--t-s); }
+.stamp-btn:hover { background: rgba(166, 77, 42, .08); }
 .stamp-btn:focus-visible { outline: 3px solid var(--rust); outline-offset: 2px; }
-.stamp-btn .hand { display: block; color: var(--rust); font-size: 1.7rem; line-height: 1; }
-.stamp-hint { display: block; font-size: var(--t-s); font-weight: 700; color: var(--ink-soft); }
-.stamp-btn[aria-expanded="true"] .stamp-hint { visibility: hidden; }
-.stamp-story { position: relative; display: grid; grid-template-columns: 120px 1fr; gap: 22px; align-items: start; margin-top: 12px; padding: clamp(20px, 3vw, 30px);
-  background: #fbf8f1 url("../images/paper.jpg"); background-size: 512px; border-radius: 6px; box-shadow: 0 1px 2px rgba(30, 36, 42, .14), 0 12px 28px rgba(30, 36, 42, .14);
-  transform-origin: top left; }
+.stamp-btn .sb-less, .stamp-btn[aria-expanded="true"] .sb-more { display: none; }
+.stamp-btn[aria-expanded="true"] .sb-less { display: inline; }
+.stamp-btn .sb-arrow { display: inline-block; width: auto; height: auto; margin: 0; transition: transform .2s ease; }
+.stamp-btn .sb-more, .stamp-btn .sb-less { width: auto; }
+.stamp-btn[aria-expanded="true"] .sb-arrow { transform: rotate(180deg); }
+.stamp-more[hidden] { display: none; }
+.stamp-more.opening { animation: ink-in .45s ease both; }
+.stamp-story { margin: 22px auto 0; max-width: 52ch; padding-left: 18px; border-left: 2px dotted rgba(166, 77, 42, .45); }
 .stamp-story[hidden] { display: none; }
-.stamp-imprint { width: 120px; height: 120px; mix-blend-mode: multiply; transform: rotate(-3deg); }
+/* brush calligraphy for 宁静致远 only: Ma Shan Zheng (SIL Open Font License), cut down to those four characters */
+@font-face { font-family: "Ma Shan Zheng 4"; src: url("ma-shan-zheng-4.woff2") format("woff2"); font-display: swap; unicode-range: U+5B81, U+9759, U+81F4, U+8FDC; }
+.stamp-story [lang^="zh"] { font-family: "Ma Shan Zheng 4", "STKaiti", "KaiTi", "Kaiti SC", serif; font-size: 1.25em; }
+/* the story reads in short beats, with the punchline and the names given room */
+.stamp-text p:not(.stamp-kicker):not(.idiom-chars):not(.story-punch) { max-width: 44ch; font-size: var(--t-m); line-height: 1.65; margin: 0 0 .9em; }
+.stamp-text > p.story-punch { margin: -.2em 0 .7em; font-family: var(--f-hand); font-size: 1.9rem; line-height: 1.1; color: var(--rust); transform: rotate(-1.5deg); transform-origin: left; }
+.idiom { margin: 1.2em 0 1.3em; padding: 16px 18px 14px; border-left: 3px solid var(--rust); background: rgba(166, 77, 42, .05); border-radius: 0 6px 6px 0; }
+.stamp-story .idiom-chars { font-size: clamp(2.6rem, 5.6vw, 3.4rem); }
+.idiom-chars { display: flex; gap: clamp(12px, 2.4vw, 22px); margin: 0 0 10px; font-family: "Ma Shan Zheng 4", "STKaiti", "KaiTi", "Kaiti SC", serif; font-size: clamp(2.6rem, 5.6vw, 3.4rem); line-height: 1; color: var(--ink-soft); }
+.idiom-ch { position: relative; display: inline-flex; flex-direction: column; align-items: center; gap: 6px; }
+.idiom-ch small { font-family: var(--f-body); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.idiom-ch:not(.is-name) small { visibility: hidden; }
+.idiom-ch.is-name { color: var(--ink); }
+.idiom-ch.is-me { color: #9c2b1b; }
+.idiom-ch.is-me small { color: #9c2b1b; }
+.idiom figcaption { font-size: var(--t-s); line-height: 1.5; color: var(--ink-soft); }
+/* the logo: a big stamp resting beside its red mark, with a handwritten nudge to click it */
+.stamp-cta { --u: 1px; display: flex; align-items: center; justify-content: center; gap: 14px; padding-top: 10px; }
+.stamp-pair { position: relative; flex: none; width: calc(230 * var(--u)); height: calc(206 * var(--u)); padding: 0; border: 0; background: none; cursor: pointer; border-radius: 10px; }
+.stamp-pair:focus-visible { outline: 3px solid var(--rust); outline-offset: 6px; }
+.stamp-imprint { position: absolute; left: calc(96 * var(--u)); top: calc(80 * var(--u)); width: calc(122 * var(--u)); height: calc(122 * var(--u)); mix-blend-mode: multiply; transform: rotate(-3deg); }
+.stamp-top { position: absolute; z-index: 1; left: 0; top: calc(4 * var(--u)); width: calc(112 * var(--u)); height: auto; transform: rotate(-8deg);
+  filter: drop-shadow(3px 6px 5px rgba(30, 36, 42, .3)); transition: transform .25s ease, filter .25s ease; }
+.stamp-pair:hover .stamp-top, .stamp-pair:focus-visible .stamp-top { transform: translateY(calc(-6 * var(--u))) rotate(-5deg) scale(1.04); filter: drop-shadow(8px 14px 10px rgba(30, 36, 42, .24)); }
+.stamp-cue { flex: 1 1 auto; min-width: 0; max-width: 280px; }
+.stamp-cue-text { white-space: nowrap; }
+.stamp-cue-title { text-wrap: balance; }
+.stamp-cue-title { margin: 0; color: var(--rust); font-size: clamp(1.9rem, 3.4vw, 2.3rem); line-height: 1; transform: rotate(-2deg); transform-origin: left; }
+.stamp-cue-hint { display: flex; align-items: center; gap: 4px; margin: 6px 0 0; color: var(--ink-soft); font-weight: 800; font-size: var(--t-s); letter-spacing: .02em; }
+.stamp-cue-arrow { flex: none; color: var(--rust); }
+.stamp-pair[aria-expanded="true"] ~ .stamp-cue .stamp-cue-hint { visibility: hidden; }
+@media (max-width: 560px) { .stamp-cta { --u: .7px; gap: 8px; } .stamp-cue-title { font-size: 1.7rem; } }
 .stamp-text h3 { margin: 0 0 8px; font-family: var(--f-display); font-weight: 400; font-size: var(--t-xl); }
 .stamp-text p { margin: 0 0 .8em; }
-.stamp-text p:last-child { margin: 0; }
-.stamp-story.opening { animation: paper-in .35s cubic-bezier(.2, .7, .2, 1) both; }
-.stamp-story.opening .stamp-imprint { animation: stamp-press .6s .15s cubic-bezier(.3, .7, .3, 1) both; }
-.stamp-story.opening .stamp-text { animation: ink-in .5s .45s ease both; }
+.stamp-more p:last-child { margin-bottom: .9em; }
+.stamp-story.opening { animation: ink-in .5s .55s ease both; }
 @keyframes paper-in { from { opacity: 0; transform: translateY(-8px) scaleY(.94); } to { opacity: 1; transform: none; } }
 @keyframes stamp-press {
   0% { opacity: 0; transform: translateY(-26px) scale(1.35) rotate(-10deg); filter: blur(2px); }
@@ -1282,8 +1315,7 @@ img.seal { display: block; object-fit: contain; }
   75% { transform: scale(1.02) rotate(-3deg); filter: blur(0); }
   100% { opacity: 1; transform: scale(1) rotate(-3deg); filter: none; } }
 @keyframes ink-in { from { opacity: 0; } to { opacity: 1; } }
-@media (max-width: 560px) { .stamp-story { grid-template-columns: 1fr; } .stamp-imprint { width: 96px; height: 96px; } }
-@media (prefers-reduced-motion: reduce) { .stamp-story.opening, .stamp-story.opening .stamp-imprint, .stamp-story.opening .stamp-text { animation: none; } .gp-track a, .stamp-btn img { transition: none; } .gp-track { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) { .stamp-story.opening, .stamp-story.opening .stamp-imprint, .stamp-story.opening .stamp-text { animation: none; } .gp-track a, .stamp-btn .sb-arrow, .stamp-more.opening { transition: none; animation: none; } .gp-track { scroll-behavior: auto; } }
 .stamp-text [lang^="zh"] { white-space: nowrap; }
 .hero-road a { white-space: nowrap; }
 
@@ -1308,3 +1340,14 @@ img.seal { display: block; object-fit: contain; }
   .cs-head.has-art > :not(.cs-art) { grid-column: 1; }
   .cs-head.has-art > .cs-art { grid-column: 2; grid-row: 1 / span 4; align-self: center; margin: 0; }
 }
+
+/* seen from above: clicking the stamp lifts it, presses it onto the paper, and sets it back down beside its mark (site.js; skipped with reduced motion) */
+.stamp-pair.pressed .stamp-top { animation: stamp-top-press 1.3s cubic-bezier(.35, .7, .3, 1) both; }
+.stamp-pair.pressed .stamp-imprint { animation: ink-show .5s .5s ease-out both; }
+@keyframes stamp-top-press {
+  0%   { transform: translate(0, 0) scale(1) rotate(-8deg); filter: drop-shadow(3px 6px 5px rgba(30, 36, 42, .3)); }
+  28%  { transform: translate(calc(101 * var(--u)), calc(80 * var(--u))) scale(1.4) rotate(-3deg); filter: drop-shadow(16px 24px 16px rgba(30, 36, 42, .16)); }
+  44%  { transform: translate(calc(101 * var(--u)), calc(80 * var(--u))) scale(1.09) rotate(-3deg); filter: drop-shadow(1px 1px 1px rgba(30, 36, 42, .45)); }
+  60%  { transform: translate(calc(101 * var(--u)), calc(80 * var(--u))) scale(1.3) rotate(-3deg); filter: drop-shadow(14px 20px 14px rgba(30, 36, 42, .2)); }
+  100% { transform: translate(0, 0) scale(1) rotate(-8deg); filter: drop-shadow(3px 6px 5px rgba(30, 36, 42, .3)); } }
+@keyframes ink-show { 0% { opacity: .15; transform: rotate(-3deg) scale(1.06); } 100% { opacity: 1; transform: rotate(-3deg) scale(1); } }

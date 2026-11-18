@@ -115,20 +115,31 @@
       <p>I'm also interested in other cultures and languages. Right now I'm working on my Chinese, and I hope to travel to China soon to get more in touch with my parents' culture.</p>
     </div>
     <div class="stamp-story-wrap">
-        <button class="stamp-btn" type="button" aria-expanded="false" aria-controls="stampStory">
-          <img src="images/seal.png" alt="" width="256" height="256">
-          <span><span class="hand">the story behind my logo</span><span class="stamp-hint">Click my logo to read it</span></span>
+      <div class="stamp-cta">
+        <button class="stamp-pair stamp-open" type="button" aria-expanded="false" aria-controls="stampStory" aria-label="The story behind my logo">
+          <img class="stamp-imprint" src="images/seal.png" alt="" width="256" height="256">
+          <img class="stamp-top" src="images/stamp-top.webp" alt="" width="260" height="266">
         </button>
-        <div class="stamp-story" id="stampStory" role="region" aria-label="The story behind my logo" hidden>
-          <img class="stamp-imprint" src="images/seal.png" alt="My logo: a red stamp with TINA on top and my Chinese name underneath." width="256" height="256">
-          <div class="stamp-text">
-            <h3>The story behind my logo</h3>
-            <p>My logo started as a stamp. When I was little, my parents had it made for me while our family was in China. My older brother got one too, except his said “Bernard is awesome.” Being seven years younger, I wasn't quite old enough to make those kinds of executive decisions.</p>
-            <p>Mine had my English name, Tina, on top and my Chinese name underneath.</p>
-            <p>My brother's and my Chinese names come from the same four-character expression, <span lang="zh-Hans">宁静致远</span> (níng jìng zhì yuǎn), which speaks to finding the clarity and stillness to pursue far-reaching goals. His name contains <span lang="zh-Hans">宁</span>, and mine contains <span lang="zh-Hans">静</span>.</p>
-            <p>Years later, that childhood stamp became my logo. It's a little piece of my family and my history that I get to carry into the work I do today.</p>
-          </div>
+        <div class="stamp-cue" aria-hidden="true">
+          <p class="stamp-cue-title hand">the story behind my logo</p>
+          <p class="stamp-cue-hint"><svg class="stamp-cue-arrow" viewBox="0 0 64 40" width="64" height="40"><path d="M60 8 C 46 30, 24 34, 8 22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M16 14 L 7 22 L 18 27" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="stamp-cue-text">click the stamp</span></p>
         </div>
+      </div>
+      <div class="stamp-story" id="stampStory" role="region" aria-label="The story behind my logo" hidden>
+        <div class="stamp-text">
+            <p>When I was little, my parents had this stamp made for me while our family was in China.</p>
+            <p>My older brother got one too, except his said:</p>
+            <p class="story-punch">“Bernard is awesome.”</p>
+            <p>Being seven years younger, I wasn't quite old enough to make those kinds of executive decisions.</p>
+            <p>Mine had my English name, Tina, on top and my Chinese name underneath.</p>
+            <p>Our Chinese names come from the same four-character expression.</p>
+            <figure class="idiom">
+              <p class="idiom-chars" lang="zh-Hans" aria-hidden="true"><span class="idiom-ch is-name">宁<small lang="en">Bernard</small></span><span class="idiom-ch is-name is-me">静<small lang="en">me</small></span><span class="idiom-ch">致</span><span class="idiom-ch">远</span></p>
+              <figcaption><span lang="zh-Hans">宁静致远</span> (níng jìng zhì yuǎn): finding the clarity and stillness to pursue far-reaching goals.</figcaption>
+            </figure>
+            <p>Years later, that childhood stamp became my logo. It's a little piece of my family and my history that I get to carry into the work I do today.</p>
+        </div>
+      </div>
     </div>
     <div class="people-side">
     <figure class="wed-photo">
