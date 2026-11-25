@@ -1351,3 +1351,10 @@ img.seal { display: block; object-fit: contain; }
   60%  { transform: translate(calc(101 * var(--u)), calc(80 * var(--u))) scale(1.3) rotate(-3deg); filter: drop-shadow(14px 20px 14px rgba(30, 36, 42, .2)); }
   100% { transform: translate(0, 0) scale(1) rotate(-8deg); filter: drop-shadow(3px 6px 5px rgba(30, 36, 42, .3)); } }
 @keyframes ink-show { 0% { opacity: .15; transform: rotate(-3deg) scale(1.06); } 100% { opacity: 1; transform: rotate(-3deg) scale(1); } }
+/* wood burning: the boards sit right on the page, no card frame, stacked */
+.gal-sub { font-weight: 800; font-size: var(--t-xs); letter-spacing: .14em; text-transform: uppercase; color: var(--rust); margin: 28px 0 18px; }
+.gal-wood { display: grid; gap: clamp(28px, 4vw, 44px); max-width: 760px; margin-bottom: 8px; }
+.gal-wood .gal-item { margin: 0; }
+.gal-wood .gal-open { border-radius: 0; }
+.gal-wood .gal-open img { border-radius: 0; box-shadow: none; filter: drop-shadow(0 10px 12px rgba(60, 40, 20, .28)); }
+.gal-wood + .gal-soon { margin-top: 26px; }
